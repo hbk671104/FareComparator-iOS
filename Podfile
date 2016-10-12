@@ -7,6 +7,7 @@ target 'FareComparator' do
 
   # Pods for FareComparator
   pod 'UberRides', :git => 'https://github.com/long/rides-ios-sdk.git', :branch => 'swift-3-dev'
+  pod 'SwiftLocation', '~> 1.1'
 end
 
 post_install do |installer|

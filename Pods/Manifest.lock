@@ -1,9 +1,11 @@
 PODS:
   - ObjectMapper (2.1.0)
+  - SwiftLocation (1.1.0)
   - UberRides (0.5.2):
     - ObjectMapper (~> 2.0)
 
 DEPENDENCIES:
+  - SwiftLocation (~> 1.1)
   - UberRides (from `https://github.com/long/rides-ios-sdk.git`, branch `swift-3-dev`)
 
 EXTERNAL SOURCES:
@@ -18,8 +20,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
+  SwiftLocation: f1bf5acb7992dd96c6f773c383f9c0479f07727d
   UberRides: 96eb232374a6e8e616c20fdba83c2643a6ad08dc
 
-PODFILE CHECKSUM: b3a84f69ef31349895be7a51c2cb8d9f033440c8
+PODFILE CHECKSUM: b98d2e31372957572d2cd8d9600274a7af7595bd
 
 COCOAPODS: 1.0.1

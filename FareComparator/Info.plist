@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>滴步比价</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -16,10 +18,28 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>FareComparator</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>uber</string>
+		<string>uberauth</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>滴步比价需要使用您的当前位置，以便计算车费与接驾时间</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -32,5 +52,26 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UberCallbackURIs</key>
+	<array>
+		<dict>
+			<key>UberCallbackURIType</key>
+			<string>General</string>
+			<key>URIString</key>
+			<string>https://github.com/hbk671104</string>
+		</dict>
+		<dict>
+			<key>UberCallbackURIType</key>
+			<string>Native</string>
+			<key>URIString</key>
+			<string>FareComparator://uberSSO</string>
+		</dict>
+	</array>
+	<key>UberClientID</key>
+	<string>2D80-rng6Hyw_dPWDQ9hN5VNg6sy3AnE</string>
+	<key>UberDisplayName</key>
+	<string>FareComparator</string>
+	<key>UberServerToken</key>
+	<string>1Np7me0CM56pmzxqzHlyEN6H68oB818OvoC64czL</string>
 </dict>
 </plist>
