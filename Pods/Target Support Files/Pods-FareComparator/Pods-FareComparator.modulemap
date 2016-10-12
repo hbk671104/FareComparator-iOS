@@ -1,0 +1,6 @@
+framework module Pods_FareComparator {
+  umbrella header "Pods-FareComparator-umbrella.h"
+
+  export *
+  module * { export * }
+}

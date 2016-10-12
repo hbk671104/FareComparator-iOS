@@ -1,0 +1,25 @@
+PODS:
+  - ObjectMapper (2.1.0)
+  - UberRides (0.5.2):
+    - ObjectMapper (~> 2.0)
+
+DEPENDENCIES:
+  - UberRides (from `https://github.com/long/rides-ios-sdk.git`, branch `swift-3-dev`)
+
+EXTERNAL SOURCES:
+  UberRides:
+    :branch: swift-3-dev
+    :git: https://github.com/long/rides-ios-sdk.git
+
+CHECKOUT OPTIONS:
+  UberRides:
+    :commit: 7ba4b33fe464de3520bccbb8eb35cb4015363130
+    :git: https://github.com/long/rides-ios-sdk.git
+
+SPEC CHECKSUMS:
+  ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
+  UberRides: 96eb232374a6e8e616c20fdba83c2643a6ad08dc
+
+PODFILE CHECKSUM: b3a84f69ef31349895be7a51c2cb8d9f033440c8
+
+COCOAPODS: 1.0.1

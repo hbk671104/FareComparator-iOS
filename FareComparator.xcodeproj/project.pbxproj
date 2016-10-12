@@ -12,6 +12,7 @@
 		4016D0501DAE1ABB00858136 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4016D04E1DAE1ABB00858136 /* Main.storyboard */; };
 		4016D0521DAE1ABB00858136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4016D0511DAE1ABB00858136 /* Assets.xcassets */; };
 		4016D0551DAE1ABB00858136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4016D0531DAE1ABB00858136 /* LaunchScreen.storyboard */; };
+		C4F7B38937A537EA44703B1C /* Pods_FareComparator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DC73743D9D1485471B8192 /* Pods_FareComparator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		4016D0511DAE1ABB00858136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4016D0541DAE1ABB00858136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4016D0561DAE1ABB00858136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		912091598FCC5EF95D9123F1 /* Pods-FareComparator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FareComparator.release.xcconfig"; path = "Pods/Target Support Files/Pods-FareComparator/Pods-FareComparator.release.xcconfig"; sourceTree = "<group>"; };
+		95BDD20D491E81052EA4CCE6 /* Pods-FareComparator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FareComparator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FareComparator/Pods-FareComparator.debug.xcconfig"; sourceTree = "<group>"; };
+		B1DC73743D9D1485471B8192 /* Pods_FareComparator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FareComparator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F7B38937A537EA44703B1C /* Pods_FareComparator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13CED954B8CF9E9AFE952683 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1DC73743D9D1485471B8192 /* Pods_FareComparator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4016D03E1DAE1ABB00858136 = {
 			isa = PBXGroup;
 			children = (
 				4016D0491DAE1ABB00858136 /* FareComparator */,
 				4016D0481DAE1ABB00858136 /* Products */,
+				65B78C13DA89753B4E07F356 /* Pods */,
+				13CED954B8CF9E9AFE952683 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = FareComparator;
 			sourceTree = "<group>";
 		};
+		65B78C13DA89753B4E07F356 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				95BDD20D491E81052EA4CCE6 /* Pods-FareComparator.debug.xcconfig */,
+				912091598FCC5EF95D9123F1 /* Pods-FareComparator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4016D0591DAE1ABB00858136 /* Build configuration list for PBXNativeTarget "FareComparator" */;
 			buildPhases = (
+				1166CD7D061F1EB30D30789A /* [CP] Check Pods Manifest.lock */,
 				4016D0431DAE1ABB00858136 /* Sources */,
 				4016D0441DAE1ABB00858136 /* Frameworks */,
 				4016D0451DAE1ABB00858136 /* Resources */,
+				B95423C5989EE425B256E936 /* [CP] Embed Pods Frameworks */,
+				908ABB6B34A9DF0088E8B197 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1166CD7D061F1EB30D30789A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		908ABB6B34A9DF0088E8B197 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FareComparator/Pods-FareComparator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B95423C5989EE425B256E936 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FareComparator/Pods-FareComparator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4016D0431DAE1ABB00858136 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -182,6 +257,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -204,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -231,6 +307,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -247,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -257,10 +334,13 @@
 		};
 		4016D05A1DAE1ABB00858136 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95BDD20D491E81052EA4CCE6 /* Pods-FareComparator.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TCXFX6H5P2;
 				INFOPLIST_FILE = FareComparator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bk.FareComparator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,10 +350,13 @@
 		};
 		4016D05B1DAE1ABB00858136 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 912091598FCC5EF95D9123F1 /* Pods-FareComparator.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TCXFX6H5P2;
 				INFOPLIST_FILE = FareComparator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bk.FareComparator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +383,7 @@
 				4016D05B1DAE1ABB00858136 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
