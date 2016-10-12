@@ -13,30 +13,30 @@ import CoreLocation
 
 class ViewController: UIViewController {
 
-	@IBOutlet weak var rideRequestButton: RideRequestButton!
-	let ridesClient = RidesClient()
-	
+    @IBOutlet weak var uberRequestButton: RideRequestButton!
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
 		// Acquire users' current location
-		let paramsBuilder = RideParametersBuilder()
+		var paramsBuilder = RideParametersBuilder()
 			.setDropoffLocation(CLLocation(latitude: 40.0611, longitude: 116.62117), nickname: "首都机场T3")
-		_ = Location.getLocation(withAccuracy: .block, onSuccess: { [weak self] (location) in
-			self!.ridesClient.fetchCheapestProduct(pickupLocation: location, completion: { (product, response) in
-				//print(product.pro)
-			})
-			}) { (location, error) in
-				print(error.description)
-		}
+            .setPickupLocation(CLLocation(latitude: 39.971023, longitude: 116.303922), nickname: "蜂鸟")
+        self.uberRequestButton.client = RidesClient()
+        self.uberRequestButton.client!.fetchCheapestProduct(pickupLocation: CLLocation(latitude: 39.971023, longitude: 116.303922), completion: { [weak self] (product, response) in
+            if let productId = product?.productID {
+                paramsBuilder = paramsBuilder.setProductID(productId)
+                self!.uberRequestButton.rideParameters = paramsBuilder.build()
+                self!.uberRequestButton.loadRideInformation()
+            }
+        })
 	}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-
 
 }
 

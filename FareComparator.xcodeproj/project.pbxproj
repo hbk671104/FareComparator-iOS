@@ -338,6 +338,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TCXFX6H5P2;
 				INFOPLIST_FILE = FareComparator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -354,6 +355,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TCXFX6H5P2;
 				INFOPLIST_FILE = FareComparator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

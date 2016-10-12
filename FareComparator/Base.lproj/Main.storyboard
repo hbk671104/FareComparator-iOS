@@ -20,7 +20,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HL3-Bs-MWe" customClass="UBSDKRideRequestButton">
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.43137254899999999" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Ps0-dr-74i"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Ps0-dr-74i"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="hqi-wF-AJ7"/>
                                 </constraints>
                             </button>
@@ -32,7 +32,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="rideRequestButton" destination="HL3-Bs-MWe" id="8ZW-i4-kw6"/>
+                        <outlet property="uberRequestButton" destination="HL3-Bs-MWe" id="H6t-P8-ydv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
