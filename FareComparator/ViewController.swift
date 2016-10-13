@@ -14,7 +14,10 @@ import CoreLocation
 class ViewController: UIViewController {
     
     let paramsBuilder = RideParametersBuilder()
+    let rideClient = RidesClient()
     @IBOutlet weak var requestUberButton: UIButton!
+    @IBOutlet weak var rideTypeLabel: UILabel!
+    @IBOutlet weak var estimatedTimeLabel: UILabel!
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -26,6 +29,21 @@ class ViewController: UIViewController {
 		_ = Location.getLocation(withAccuracy: .block, onSuccess: { (location) in
 			_ = self.paramsBuilder.setPickupLocation(location)
             self.requestUberButton.isEnabled = true
+            // Fetch cheapest product
+            self.rideClient.fetchCheapestProduct(pickupLocation: location, completion: { (uberProduct, response) in
+                if let productId = uberProduct?.productID {
+                    _ = self.paramsBuilder.setProductID(productId)
+                    // Fetch time estimate
+                    self.rideClient.fetchTimeEstimates(pickupLocation: location, completion: { (timeEstimates, response) in
+                        self.estimatedTimeLabel.text = "\(timeEstimates[0].estimate)s"
+                        self.rideTypeLabel.text = timeEstimates[0].name
+                    })
+                    // Fetch price estimate
+                    self.rideClient.fetchPriceEstimates(pickupLocation: location, dropoffLocation: CLLocation(latitude: 40.0611, longitude: 116.62117), completion: { (priceEstimates, response) in
+                        print(priceEstimates)
+                    })
+                }
+            })
 			}) { (location, locationError) in
 				print(locationError.description)
 		}

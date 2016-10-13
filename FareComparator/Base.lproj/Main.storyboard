@@ -5,7 +5,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--滴步比价-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FareComparator" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,16 +27,40 @@
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ai3-H0-VrY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYh-5C-AdN">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PHy-Ti-QaB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="fT0-jB-HFQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gB-CQ-xg6">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="YUS-LX-Ovu"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="119" id="ox4-CY-6dl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="e1c-hl-TdA" firstAttribute="top" secondItem="4gB-CQ-xg6" secondAttribute="bottom" constant="54.5" id="9BL-Nx-0rv"/>
+                            <constraint firstItem="4gB-CQ-xg6" firstAttribute="top" secondItem="SYh-5C-AdN" secondAttribute="bottom" constant="35" id="9Rc-ri-cex"/>
+                            <constraint firstItem="4gB-CQ-xg6" firstAttribute="centerX" secondItem="e1c-hl-TdA" secondAttribute="centerX" id="FaA-Ln-5jf"/>
                             <constraint firstItem="e1c-hl-TdA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="L8T-V6-S8A"/>
+                            <constraint firstItem="SYh-5C-AdN" firstAttribute="centerX" secondItem="e1c-hl-TdA" secondAttribute="centerX" id="T5H-dW-6sj"/>
                             <constraint firstItem="e1c-hl-TdA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kFf-Pm-7Kg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="sMM-3i-N0u"/>
+                    <navigationItem key="navigationItem" title="滴步比价" id="sMM-3i-N0u"/>
                     <connections>
+                        <outlet property="estimatedTimeLabel" destination="4gB-CQ-xg6" id="pOX-s2-WI9"/>
                         <outlet property="requestUberButton" destination="e1c-hl-TdA" id="bJ7-H1-d0p"/>
+                        <outlet property="rideTypeLabel" destination="SYh-5C-AdN" id="uwO-dM-Cn7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
