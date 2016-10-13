@@ -49,7 +49,7 @@ class ViewController: UIViewController {
 	
 	@IBAction func login(_ sender: AnyObject) {
 		let rideRequestViewController = RideRequestViewController(rideParameters: paramsBuilder.build(), loginManager: LoginManager())
-		self.present(rideRequestViewController, animated: true, completion: nil)
+		self.navigationController?.pushViewController(rideRequestViewController, animated: true)
 	}
 }
 
