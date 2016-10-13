@@ -12,33 +12,23 @@ import SwiftLocation
 import CoreLocation
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var uberRequestButton: RideRequestButton!
+    
     let paramsBuilder = RideParametersBuilder()
-	
+    @IBOutlet weak var requestUberButton: UIButton!
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
+        self.requestUberButton.isEnabled = false
 		// Acquire users' current location
-		_ = paramsBuilder.setDropoffLocation(CLLocation(latitude: 40.0611, longitude: 116.62117), nickname: "首都机场T3")
+		_ = paramsBuilder.setDropoffLocation(CLLocation(latitude: 40.0611, longitude: 116.62117))
 		_ = Location.getLocation(withAccuracy: .block, onSuccess: { (location) in
 			_ = self.paramsBuilder.setPickupLocation(location)
-			self.uberRequestButton.client = RidesClient()
-			self.uberRequestButton.client!.fetchCheapestProduct(pickupLocation: location, completion: { (product, response) in
-				if let productId = product?.productID {
-					_ = self.paramsBuilder.setProductID(productId)
-					self.uberRequestButton.rideParameters = self.paramsBuilder.build()
-					self.uberRequestButton.delegate = self
-					self.uberRequestButton.loadRideInformation()
-				}
-				})
+            self.requestUberButton.isEnabled = true
 			}) { (location, locationError) in
 				print(locationError.description)
 		}
-//		let rideRequestView = RideRequestView(rideParameters: paramsBuilder.build(), frame: self.view.bounds)
-//		self.view.addSubview(rideRequestView)
-//		rideRequestView.load()
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -51,18 +41,5 @@ class ViewController: UIViewController {
 		let rideRequestViewController = RideRequestViewController(rideParameters: paramsBuilder.build(), loginManager: LoginManager())
 		self.navigationController?.pushViewController(rideRequestViewController, animated: true)
 	}
-}
-
-extension ViewController : RideRequestButtonDelegate {
-	
-	// MARK: - RideRequestButtonDelegate
-	
-	func rideRequestButtonDidLoadRideInformation(_ button: RideRequestButton) {
-		print(button.rideParameters.dropoffNickname)
-	}
-	
-	func rideRequestButton(_ button: RideRequestButton, didReceiveError error: RidesError) {
-		print(error.title)
-	}
-	
+    
 }

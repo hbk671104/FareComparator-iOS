@@ -17,17 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HL3-Bs-MWe" customClass="UBSDKRideRequestButton">
-                                <color key="backgroundColor" red="0.97647058819999999" green="0.43137254899999999" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1c-hl-TdA">
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Ps0-dr-74i"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="hqi-wF-AJ7"/>
+                                    <constraint firstAttribute="height" constant="30" id="bUl-75-MVG"/>
+                                    <constraint firstAttribute="width" constant="62" id="j0V-Np-vAj"/>
                                 </constraints>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1c-hl-TdA">
-                                <frame key="frameInset" minX="164" minY="440" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="一键优步"/>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ai3-H0-VrY"/>
                                 </connections>
@@ -35,13 +30,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HL3-Bs-MWe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6xe-yp-59S"/>
-                            <constraint firstItem="HL3-Bs-MWe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RBh-GR-BDc"/>
+                            <constraint firstItem="e1c-hl-TdA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="L8T-V6-S8A"/>
+                            <constraint firstItem="e1c-hl-TdA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kFf-Pm-7Kg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sMM-3i-N0u"/>
                     <connections>
-                        <outlet property="uberRequestButton" destination="HL3-Bs-MWe" id="H6t-P8-ydv"/>
+                        <outlet property="requestUberButton" destination="e1c-hl-TdA" id="bJ7-H1-d0p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
