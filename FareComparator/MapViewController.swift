@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftLocation
 
 class MapViewController: UIViewController {
 
@@ -18,7 +19,14 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view.
 		mainMapView.showsScale = true
 		mainMapView.showsCompass = true
-		//mainMapView.showsUserLocation = true
+        // TODO: 换高德定位
+		_ = Location.getLocation(withAccuracy: .block, onSuccess: { (location) in
+            self.mainMapView.showsUserLocation = true
+            self.mainMapView.setCenter(location.coordinate, animated: true)
+            self.mainMapView.setZoomLevel(15, animated: true)
+            }, onError: { (location, error) in
+                MessageUtil.showError(title: "Error", message: error.description)
+        })
     }
 
     override func didReceiveMemoryWarning() {
