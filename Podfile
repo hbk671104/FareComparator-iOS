@@ -10,6 +10,7 @@ target 'FareComparator' do
   pod 'SwiftLocation'
   pod 'IBAnimatable'
   pod 'R.swift'
+  pod 'SwiftMessages'
 end
 
 post_install do |installer|

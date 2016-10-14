@@ -39,12 +39,18 @@ class ViewController: UIViewController {
 							DispatchQueue.main.async {
 								self.uberTableView.reloadData()
 							}
+						} else {
+							MessageUtil.showError(title: response.error?.code, message: response.error?.title)
 						}
                     })
-                }
+				} else {
+					if let error = response.error {
+						MessageUtil.showError(title: error.code, message: error.title)
+					}
+				}
             })
 			}) { (location, locationError) in
-				print(locationError.description)
+				MessageUtil.showError(title: "Error", message: locationError.description)
 		}
 	}
 

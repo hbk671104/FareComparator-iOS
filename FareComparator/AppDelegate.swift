@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		// Handle incoming SSO Requests
 		_ = RidesAppDelegate.sharedInstance.application(application, didFinishLaunchingWithOptions: launchOptions)
+		
 		return true
 	}
 

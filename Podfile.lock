@@ -5,6 +5,7 @@ PODS:
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
   - SwiftLocation (1.1.0)
+  - SwiftMessages (3.0.1)
   - UberRides (0.5.2):
     - ObjectMapper (~> 2.0)
 
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - IBAnimatable
   - R.swift
   - SwiftLocation
+  - SwiftMessages
   - UberRides (from `https://github.com/long/rides-ios-sdk.git`, branch `swift-3-dev`)
 
 EXTERNAL SOURCES:
@@ -30,8 +32,9 @@ SPEC CHECKSUMS:
   R.swift: 14400e5784224d1e4e59a8fc5549198c7e8fe360
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   SwiftLocation: f1bf5acb7992dd96c6f773c383f9c0479f07727d
+  SwiftMessages: 945e2928c6e819776abc8f480eb288c42cdd9e5b
   UberRides: 96eb232374a6e8e616c20fdba83c2643a6ad08dc
 
-PODFILE CHECKSUM: bcf6f1c68476cf0578582434a8d302c6a39b6ba4
+PODFILE CHECKSUM: 0e8effbad818669ac6489ce55fb7c115eec1ed62
 
 COCOAPODS: 1.0.1
