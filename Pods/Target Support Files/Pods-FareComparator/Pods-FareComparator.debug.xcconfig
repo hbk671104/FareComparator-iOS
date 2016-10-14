@@ -1,9 +1,10 @@
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper" "$PODS_CONFIGURATION_BUILD_DIR/SwiftLocation" "$PODS_CONFIGURATION_BUILD_DIR/UberRides"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/IBAnimatable" "$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper" "$PODS_CONFIGURATION_BUILD_DIR/R.swift.Library" "$PODS_CONFIGURATION_BUILD_DIR/SwiftLocation" "$PODS_CONFIGURATION_BUILD_DIR/UberRides"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/R.swift"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper/ObjectMapper.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftLocation/SwiftLocation.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/UberRides/UberRides.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "ObjectMapper" -framework "SwiftLocation" -framework "UberRides"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/IBAnimatable/IBAnimatable.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper/ObjectMapper.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/R.swift.Library/Rswift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftLocation/SwiftLocation.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/UberRides/UberRides.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/R.swift"
+OTHER_LDFLAGS = $(inherited) -framework "IBAnimatable" -framework "ObjectMapper" -framework "Rswift" -framework "SwiftLocation" -framework "UberRides"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

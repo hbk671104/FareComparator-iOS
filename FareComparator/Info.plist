@@ -71,7 +71,12 @@
 	<string>2D80-rng6Hyw_dPWDQ9hN5VNg6sy3AnE</string>
 	<key>UberDisplayName</key>
 	<string>FareComparator</string>
-    <key>UberServerToken</key>
-    <string>lG4ATDaqvivdza9EfuREINmEFEeXVy90YUTs6d6u</string>
+	<key>UberServerToken</key>
+	<string>lG4ATDaqvivdza9EfuREINmEFEeXVy90YUTs6d6u</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

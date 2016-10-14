@@ -12,6 +12,7 @@
 		4016D0501DAE1ABB00858136 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4016D04E1DAE1ABB00858136 /* Main.storyboard */; };
 		4016D0521DAE1ABB00858136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4016D0511DAE1ABB00858136 /* Assets.xcassets */; };
 		4016D0551DAE1ABB00858136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4016D0531DAE1ABB00858136 /* LaunchScreen.storyboard */; };
+		403329B71DB0C97000F46E61 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403329B61DB0C97000F46E61 /* R.generated.swift */; };
 		C4F7B38937A537EA44703B1C /* Pods_FareComparator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DC73743D9D1485471B8192 /* Pods_FareComparator.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		4016D0511DAE1ABB00858136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4016D0541DAE1ABB00858136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4016D0561DAE1ABB00858136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		403329B61DB0C97000F46E61 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		912091598FCC5EF95D9123F1 /* Pods-FareComparator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FareComparator.release.xcconfig"; path = "Pods/Target Support Files/Pods-FareComparator/Pods-FareComparator.release.xcconfig"; sourceTree = "<group>"; };
 		95BDD20D491E81052EA4CCE6 /* Pods-FareComparator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FareComparator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FareComparator/Pods-FareComparator.debug.xcconfig"; sourceTree = "<group>"; };
 		B1DC73743D9D1485471B8192 /* Pods_FareComparator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FareComparator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +45,7 @@
 		13CED954B8CF9E9AFE952683 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				403329B61DB0C97000F46E61 /* R.generated.swift */,
 				B1DC73743D9D1485471B8192 /* Pods_FareComparator.framework */,
 			);
 			name = Frameworks;
@@ -96,6 +99,7 @@
 			buildConfigurationList = 4016D0591DAE1ABB00858136 /* Build configuration list for PBXNativeTarget "FareComparator" */;
 			buildPhases = (
 				1166CD7D061F1EB30D30789A /* [CP] Check Pods Manifest.lock */,
+				403329B51DB0C91900F46E61 /* ShellScript */,
 				4016D0431DAE1ABB00858136 /* Sources */,
 				4016D0441DAE1ABB00858136 /* Frameworks */,
 				4016D0451DAE1ABB00858136 /* Resources */,
@@ -175,6 +179,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		403329B51DB0C91900F46E61 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+		};
 		908ABB6B34A9DF0088E8B197 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,6 +231,7 @@
 			files = (
 				4016D04D1DAE1ABB00858136 /* ViewController.swift in Sources */,
 				4016D04B1DAE1ABB00858136 /* AppDelegate.swift in Sources */,
+				403329B71DB0C97000F46E61 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
