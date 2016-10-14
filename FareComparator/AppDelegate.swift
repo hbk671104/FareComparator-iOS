@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
+		
+		// AMap Config
+		AMapServices.shared().apiKey = "e23e364c13477c249a9a27fdede93d90"
+		
+		// Uber Config
 		Configuration.setRegion(.china)
 		Configuration.setSandboxEnabled(true)
 		Configuration.setFallbackEnabled(false)

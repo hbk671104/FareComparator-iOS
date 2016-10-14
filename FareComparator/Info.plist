@@ -28,6 +28,14 @@
 				<string>FareComparator</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>iosamap</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -38,6 +46,11 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>滴步比价需要使用您的当前位置，以便计算车费与接驾时间</string>
 	<key>UILaunchStoryboardName</key>
@@ -55,16 +68,16 @@
 	<key>UberCallbackURIs</key>
 	<array>
 		<dict>
-			<key>UberCallbackURIType</key>
-			<string>General</string>
 			<key>URIString</key>
 			<string>https://github.com/hbk671104</string>
+			<key>UberCallbackURIType</key>
+			<string>General</string>
 		</dict>
 		<dict>
-			<key>UberCallbackURIType</key>
-			<string>Native</string>
 			<key>URIString</key>
 			<string>FareComparator://uberSSO</string>
+			<key>UberCallbackURIType</key>
+			<string>Native</string>
 		</dict>
 	</array>
 	<key>UberClientID</key>
@@ -73,10 +86,5 @@
 	<string>FareComparator</string>
 	<key>UberServerToken</key>
 	<string>lG4ATDaqvivdza9EfuREINmEFEeXVy90YUTs6d6u</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 </dict>
 </plist>

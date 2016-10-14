@@ -4,7 +4,6 @@
 //
 
 import Foundation
-import IBAnimatable
 import Rswift
 import UIKit
 
@@ -107,7 +106,7 @@ struct _R {
     }
     
     struct main: Rswift.StoryboardResourceWithInitialControllerType {
-      typealias InitialController = IBAnimatable.AnimatableNavigationController
+      typealias InitialController = UIKit.UINavigationController
       
       let bundle = R.hostingBundle
       let name = "Main"

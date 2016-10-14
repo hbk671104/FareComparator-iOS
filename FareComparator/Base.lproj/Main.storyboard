@@ -9,7 +9,7 @@
         <!--滴步比价-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FareComparator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PriceCompareViewController" customModule="FareComparator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -81,24 +81,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2015.2" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2783" y="139"/>
         </scene>
-        <!--Animatable Navigation Controller-->
+        <!--Map View Controller-->
+        <scene sceneID="ErW-Nd-PYF">
+            <objects>
+                <viewController id="w83-03-x3j" customClass="MapViewController" customModule="FareComparator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dhv-Oh-j9R"/>
+                        <viewControllerLayoutGuide type="bottom" id="TeT-sO-Sm0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rix-1g-Ort">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mU4-X4-w5v" customClass="MAMapView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mU4-X4-w5v" secondAttribute="trailing" id="1iG-o4-22E"/>
+                            <constraint firstItem="mU4-X4-w5v" firstAttribute="leading" secondItem="rix-1g-Ort" secondAttribute="leading" id="P48-dA-yTl"/>
+                            <constraint firstItem="mU4-X4-w5v" firstAttribute="top" secondItem="Dhv-Oh-j9R" secondAttribute="bottom" id="cEY-1p-AY9"/>
+                            <constraint firstItem="TeT-sO-Sm0" firstAttribute="top" secondItem="mU4-X4-w5v" secondAttribute="bottom" id="v9d-ml-DD7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KRf-sa-4S0">
+                        <barButtonItem key="rightBarButtonItem" title="价格" id="TxY-ne-u8M">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="Qud-I8-fWv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mainMapView" destination="mU4-X4-w5v" id="YJi-Hl-Epg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ob-32-skU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1920.8" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="Z1D-vD-dop">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mgW-3o-tYy" customClass="AnimatableNavigationController" customModule="IBAnimatable" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mgW-3o-tYy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="HIg-eA-LuP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="SystemMoveIn(Right)"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="screenEdgePan(Left)"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vNL-TF-wPz"/>
+                        <segue destination="w83-03-x3j" kind="relationship" relationship="rootViewController" id="NZV-un-4tr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASg-h4-s3b" userLabel="First Responder" sceneMemberID="firstResponder"/>

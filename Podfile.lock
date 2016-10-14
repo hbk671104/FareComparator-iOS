@@ -1,4 +1,9 @@
 PODS:
+  - AMap3DMap (4.3.0):
+    - AMapFoundation (~> 1.2)
+  - AMapFoundation (1.3.1)
+  - AMapSearch (4.3.0):
+    - AMapFoundation (~> 1.2)
   - IBAnimatable (3.0)
   - ObjectMapper (2.1.0)
   - R.swift (3.1.0):
@@ -10,6 +15,8 @@ PODS:
     - ObjectMapper (~> 2.0)
 
 DEPENDENCIES:
+  - AMap3DMap
+  - AMapSearch
   - IBAnimatable
   - R.swift
   - SwiftLocation
@@ -27,6 +34,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/long/rides-ios-sdk.git
 
 SPEC CHECKSUMS:
+  AMap3DMap: 7ee2abfcb41651bbf80ff18ac5446c0ae46a671a
+  AMapFoundation: 636834a27cd003084f56b4232f3031e6a44c7e7e
+  AMapSearch: c90cc018a6c5281af17af6058ca99218a4d4b442
   IBAnimatable: 5ac8e4c9f879e1840041362e41f7728bbbf16b35
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
   R.swift: 14400e5784224d1e4e59a8fc5549198c7e8fe360
@@ -35,6 +45,6 @@ SPEC CHECKSUMS:
   SwiftMessages: 945e2928c6e819776abc8f480eb288c42cdd9e5b
   UberRides: 96eb232374a6e8e616c20fdba83c2643a6ad08dc
 
-PODFILE CHECKSUM: 0e8effbad818669ac6489ce55fb7c115eec1ed62
+PODFILE CHECKSUM: 1b99e47a32818f0fb0cc1a6ee2a929a64d0f304d
 
 COCOAPODS: 1.0.1

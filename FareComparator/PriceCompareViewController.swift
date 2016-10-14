@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PriceCompareViewController.swift
 //  FareComparator
 //
 //  Created by BK on 10/12/16.
@@ -12,7 +12,7 @@ import SwiftLocation
 import CoreLocation
 import IBAnimatable
 
-class ViewController: UIViewController {
+class PriceCompareViewController: UIViewController {
     
     let paramsBuilder = RideParametersBuilder()
     let rideClient = RidesClient()
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
-		
+
 		// Acquire users' current location
 		_ = paramsBuilder.setDropoffLocation(CLLocation(latitude: 40.0611, longitude: 116.62117))
 		_ = Location.getLocation(withAccuracy: .block, onSuccess: { (location) in
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
 	
 }
 
-extension ViewController : UITableViewDelegate, UITableViewDataSource {
+extension PriceCompareViewController : UITableViewDelegate, UITableViewDataSource {
 	
 	// MARK: - UITableViewDataSource
 	
