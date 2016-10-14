@@ -13,6 +13,7 @@
 		4016D0521DAE1ABB00858136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4016D0511DAE1ABB00858136 /* Assets.xcassets */; };
 		4016D0551DAE1ABB00858136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4016D0531DAE1ABB00858136 /* LaunchScreen.storyboard */; };
 		403329B71DB0C97000F46E61 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403329B61DB0C97000F46E61 /* R.generated.swift */; };
+		403329BD1DB0CDE100F46E61 /* RideDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403329BC1DB0CDE100F46E61 /* RideDetailTableViewCell.swift */; };
 		C4F7B38937A537EA44703B1C /* Pods_FareComparator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DC73743D9D1485471B8192 /* Pods_FareComparator.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		4016D0541DAE1ABB00858136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4016D0561DAE1ABB00858136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		403329B61DB0C97000F46E61 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		403329BC1DB0CDE100F46E61 /* RideDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideDetailTableViewCell.swift; sourceTree = "<group>"; };
 		912091598FCC5EF95D9123F1 /* Pods-FareComparator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FareComparator.release.xcconfig"; path = "Pods/Target Support Files/Pods-FareComparator/Pods-FareComparator.release.xcconfig"; sourceTree = "<group>"; };
 		95BDD20D491E81052EA4CCE6 /* Pods-FareComparator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FareComparator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FareComparator/Pods-FareComparator.debug.xcconfig"; sourceTree = "<group>"; };
 		B1DC73743D9D1485471B8192 /* Pods_FareComparator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FareComparator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,14 +74,39 @@
 		4016D0491DAE1ABB00858136 /* FareComparator */ = {
 			isa = PBXGroup;
 			children = (
+				403329BB1DB0CBD300F46E61 /* Controller */,
+				403329BA1DB0CBCB00F46E61 /* View */,
+				403329B81DB0CBBE00F46E61 /* Modal */,
 				4016D04A1DAE1ABB00858136 /* AppDelegate.swift */,
-				4016D04C1DAE1ABB00858136 /* ViewController.swift */,
 				4016D04E1DAE1ABB00858136 /* Main.storyboard */,
 				4016D0511DAE1ABB00858136 /* Assets.xcassets */,
 				4016D0531DAE1ABB00858136 /* LaunchScreen.storyboard */,
 				4016D0561DAE1ABB00858136 /* Info.plist */,
 			);
 			path = FareComparator;
+			sourceTree = "<group>";
+		};
+		403329B81DB0CBBE00F46E61 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
+		403329BA1DB0CBCB00F46E61 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				403329BC1DB0CDE100F46E61 /* RideDetailTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		403329BB1DB0CBD300F46E61 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4016D04C1DAE1ABB00858136 /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		65B78C13DA89753B4E07F356 /* Pods */ = {
@@ -231,6 +258,7 @@
 			files = (
 				4016D04D1DAE1ABB00858136 /* ViewController.swift in Sources */,
 				4016D04B1DAE1ABB00858136 /* AppDelegate.swift in Sources */,
+				403329BD1DB0CDE100F46E61 /* RideDetailTableViewCell.swift in Sources */,
 				403329B71DB0C97000F46E61 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

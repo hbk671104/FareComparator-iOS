@@ -10,12 +10,16 @@ import UIKit
 import UberRides
 import SwiftLocation
 import CoreLocation
+import IBAnimatable
 
 class ViewController: UIViewController {
     
     let paramsBuilder = RideParametersBuilder()
     let rideClient = RidesClient()
-    
+	var uberPriceEstimate: [PriceEstimate] = []
+	
+	@IBOutlet weak var uberTableView: UITableView!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -28,16 +32,14 @@ class ViewController: UIViewController {
             self.rideClient.fetchCheapestProduct(pickupLocation: location, completion: { (uberProduct, response) in
                 if let productId = uberProduct?.productID {
                     _ = self.paramsBuilder.setProductID(productId)
-                    // Fetch time estimate
-                    self.rideClient.fetchTimeEstimates(pickupLocation: location, completion: { (timeEstimates, response) in
-						DispatchQueue.main.async {
-//							self.estimatedTimeLabel.text = "\(timeEstimates[0].estimate)s"
-//							self.rideTypeLabel.text = timeEstimates[0].name
-						}
-                    })
                     // Fetch price estimate
                     self.rideClient.fetchPriceEstimates(pickupLocation: location, dropoffLocation: CLLocation(latitude: 40.0611, longitude: 116.62117), completion: { (priceEstimates, response) in
-                        print(priceEstimates)
+						if response.error == nil {
+							self.uberPriceEstimate = priceEstimates
+							DispatchQueue.main.async {
+								self.uberTableView.reloadData()
+							}
+						}
                     })
                 }
             })
@@ -50,12 +52,31 @@ class ViewController: UIViewController {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-
 	
-//	@IBAction func login(_ sender: AnyObject) {
-//		let rideRequestViewController = RideRequestViewController(rideParameters: paramsBuilder.build(), loginManager: LoginManager())
-//		rideRequestViewController.title = "优步叫车"
-//		self.navigationController?.pushViewController(rideRequestViewController, animated: true)
-//	}
+}
+
+extension ViewController : UITableViewDelegate, UITableViewDataSource {
+	
+	// MARK: - UITableViewDataSource
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return self.uberPriceEstimate.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let rideDetailCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.rideDetailCell, for: indexPath)!
+		rideDetailCell.priceEstimate = self.uberPriceEstimate[indexPath.row]
+		return rideDetailCell
+	}
+	
+	// MARK: - UITableViewDelegate
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let priceEstimate = self.uberPriceEstimate[indexPath.row]
+		_ = paramsBuilder.setProductID(priceEstimate.productID!)
+		let rideRequestViewController = RideRequestViewController(rideParameters: paramsBuilder.build(), loginManager: LoginManager())
+		rideRequestViewController.title = "优步叫车"
+		self.navigationController?.pushViewController(rideRequestViewController, animated: true)
+	}
 	
 }
