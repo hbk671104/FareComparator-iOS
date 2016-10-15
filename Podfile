@@ -7,11 +7,11 @@ target 'FareComparator' do
 
   # Pods for FareComparator
   pod 'UberRides', :git => 'https://github.com/long/rides-ios-sdk.git', :branch => 'swift-3-dev'
-  pod 'SwiftLocation'
   pod 'IBAnimatable'
   pod 'R.swift'
   pod 'SwiftMessages'
   pod 'AMap3DMap'  #3D地图SDK
+  pod 'AMapLocation'  #定位 SDK
   pod 'AMapSearch' #搜索服务SDK
 end
 

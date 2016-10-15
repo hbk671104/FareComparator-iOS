@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RHs-hD-QWL" id="Nxn-2i-89U">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <frame key="frameInset" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人民优步" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-uw-vga">
@@ -110,7 +110,7 @@
                     <navigationItem key="navigationItem" id="KRf-sa-4S0">
                         <barButtonItem key="rightBarButtonItem" title="价格" id="TxY-ne-u8M">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="Qud-I8-fWv"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="priceComparePush" id="Qud-I8-fWv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

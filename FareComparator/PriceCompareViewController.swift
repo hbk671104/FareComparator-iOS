@@ -8,14 +8,13 @@
 
 import UIKit
 import UberRides
-import SwiftLocation
-import CoreLocation
-import IBAnimatable
 
 class PriceCompareViewController: UIViewController {
     
     let paramsBuilder = RideParametersBuilder()
     let rideClient = RidesClient()
+    var userPickupLocation: CLLocation! = nil
+    var userDropoffLocation: CLLocation! = nil
 	var uberPriceEstimate: [PriceEstimate] = []
 	
 	@IBOutlet weak var uberTableView: UITableView!
@@ -24,34 +23,20 @@ class PriceCompareViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 
-		// Acquire users' current location
-		_ = paramsBuilder.setDropoffLocation(CLLocation(latitude: 40.0611, longitude: 116.62117))
-		_ = Location.getLocation(withAccuracy: .block, onSuccess: { (location) in
-			_ = self.paramsBuilder.setPickupLocation(location)
-            // Fetch cheapest product
-            self.rideClient.fetchCheapestProduct(pickupLocation: location, completion: { (uberProduct, response) in
-                if let productId = uberProduct?.productID {
-                    _ = self.paramsBuilder.setProductID(productId)
-                    // Fetch price estimate
-                    self.rideClient.fetchPriceEstimates(pickupLocation: location, dropoffLocation: CLLocation(latitude: 40.0611, longitude: 116.62117), completion: { (priceEstimates, response) in
-						if response.error == nil {
-							self.uberPriceEstimate = priceEstimates
-							DispatchQueue.main.async {
-								self.uberTableView.reloadData()
-							}
-						} else {
-							MessageUtil.showError(title: response.error?.code, message: response.error?.title)
-						}
-                    })
-				} else {
-					if let error = response.error {
-						MessageUtil.showError(title: error.code, message: error.title)
-					}
-				}
-            })
-			}) { (location, locationError) in
-				MessageUtil.showError(title: "Error", message: locationError.description)
-		}
+		// Params init
+		_ = paramsBuilder.setDropoffLocation(userDropoffLocation)
+        _ = paramsBuilder.setPickupLocation(userPickupLocation)
+        // Fetch price estimate
+        self.rideClient.fetchPriceEstimates(pickupLocation: userPickupLocation, dropoffLocation: userDropoffLocation, completion: { (priceEstimates, response) in
+            if response.error == nil {
+                self.uberPriceEstimate = priceEstimates
+                DispatchQueue.main.async {
+                    self.uberTableView.reloadData()
+                }
+            } else {
+                MessageUtil.showError(title: response.error?.code, message: response.error?.title)
+            }
+        })
 	}
 
 	override func didReceiveMemoryWarning() {

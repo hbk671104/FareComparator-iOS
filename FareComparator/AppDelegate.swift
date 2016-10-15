@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Override point for customization after application launch.
 		
 		// AMap Config
-		AMapServices.shared().apiKey = "e23e364c13477c249a9a27fdede93d90"
-		
+		AMapServices.shared().apiKey = "1aa7c8d0f9dff2e0d30dc54228beab9a"
+        
 		// Uber Config
 		Configuration.setRegion(.china)
 		Configuration.setSandboxEnabled(true)

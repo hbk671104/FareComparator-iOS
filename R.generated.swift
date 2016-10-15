@@ -49,8 +49,23 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 0 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
   struct segue {
+    /// This struct is generated for `MapViewController`, and contains static references to 1 segues.
+    struct mapViewController {
+      /// Segue identifier `priceComparePush`.
+      static let priceComparePush: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, PriceCompareViewController> = Rswift.StoryboardSegueIdentifier(identifier: "priceComparePush")
+      
+      /// Optionally returns a typed version of segue `priceComparePush`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func priceComparePush(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, PriceCompareViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.priceComparePush, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
