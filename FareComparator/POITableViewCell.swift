@@ -17,7 +17,15 @@ class POITableViewCell: UITableViewCell {
         didSet {
             if let poi = poiModal {
                 nameLabel.text = poi.name
-                typeLabel.text = poi.type
+                if !poi.type.isEmpty {
+                    if poi.type.contains(";") {
+                        typeLabel.text = poi.type.components(separatedBy: ";").first
+                    } else {
+                        typeLabel.text = poi.type
+                    }
+                } else {
+                    typeLabel.isHidden = true
+                }
                 addressLabel.text = poi.address
             }
         }
