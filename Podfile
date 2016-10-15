@@ -12,6 +12,7 @@ target 'FareComparator' do
   pod 'SwiftMessages'
   pod 'AMap3DMap'  #3D地图SDK
   pod 'AMapSearch' #搜索服务SDK
+  pod 'Then'
 end
 
 post_install do |installer|

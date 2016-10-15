@@ -49,31 +49,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `POIDetailCell`.
+    static let pOIDetailCell: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "POIDetailCell")
     /// Reuse identifier `RideDetailCell`.
     static let rideDetailCell: Rswift.ReuseIdentifier<RideDetailTableViewCell> = Rswift.ReuseIdentifier(identifier: "RideDetailCell")
     
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 0 view controllers.
   struct segue {
-    /// This struct is generated for `MapViewController`, and contains static references to 1 segues.
-    struct mapViewController {
-      /// Segue identifier `priceComparePush`.
-      static let priceComparePush: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, PriceCompareViewController> = Rswift.StoryboardSegueIdentifier(identifier: "priceComparePush")
-      
-      /// Optionally returns a typed version of segue `priceComparePush`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func priceComparePush(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, PriceCompareViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.priceComparePush, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
     fileprivate init() {}
   }
   
@@ -141,9 +128,15 @@ struct _R: Rswift.Validatable {
       
       let bundle = R.hostingBundle
       let name = "Main"
+      let pOISearchResultViewController = StoryboardViewControllerResource<POISearchResultViewController>(identifier: "POISearchResultViewController")
+      
+      func pOISearchResultViewController(_: Void = ()) -> POISearchResultViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: pOISearchResultViewController)
+      }
       
       static func validate() throws {
         if UIKit.UIImage(named: "Locate") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Locate' is used in storyboard 'Main', but couldn't be loaded.") }
+        if _R.storyboard.main().pOISearchResultViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pOISearchResultViewController' could not be loaded from storyboard 'Main' as 'POISearchResultViewController'.") }
       }
       
       fileprivate init() {}
