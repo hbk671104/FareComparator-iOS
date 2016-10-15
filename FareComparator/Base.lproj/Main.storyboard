@@ -167,9 +167,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sq4-Nl-TKn" secondAttribute="trailing" id="5B3-gN-wnh"/>
-                            <constraint firstItem="sq4-Nl-TKn" firstAttribute="top" secondItem="DPI-hD-Idy" secondAttribute="bottom" id="Njv-wl-xVc"/>
                             <constraint firstItem="oif-ZL-ATh" firstAttribute="top" secondItem="sq4-Nl-TKn" secondAttribute="bottom" id="QTo-xS-YEi"/>
                             <constraint firstItem="sq4-Nl-TKn" firstAttribute="leading" secondItem="Wes-Tu-sTE" secondAttribute="leading" id="fcb-IX-qtS"/>
+                            <constraint firstItem="sq4-Nl-TKn" firstAttribute="top" secondItem="Wes-Tu-sTE" secondAttribute="top" id="qIl-Ea-3Pv"/>
                         </constraints>
                     </view>
                     <connections>
