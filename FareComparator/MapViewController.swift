@@ -13,7 +13,9 @@ class MapViewController: UIViewController {
 
 	@IBOutlet weak var mainMapView: MAMapView!
     let poiSearchManager = AMapSearchAPI()
+    let poiSearchRequest = AMapPOIKeywordsSearchRequest()
     var hasUserLocation = false
+    let poiSearchResultController = R.storyboard.main.pOISearchResultViewController()
     var searchController : UISearchController!
     
     override func viewDidLoad() {
@@ -22,10 +24,10 @@ class MapViewController: UIViewController {
         // Do avaradditional setup after loading the view.
         
         // Search controller init
-        let poiSearchResultVC = R.storyboard.main.pOISearchResultViewController()
-        searchController = UISearchController(searchResultsController: poiSearchResultVC)
+        searchController = UISearchController(searchResultsController: poiSearchResultController)
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchResultsUpdater = poiSearchResultVC
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "请输入目的地..."
         navigationItem.titleView = searchController.searchBar
         definesPresentationContext = true
         
@@ -36,13 +38,11 @@ class MapViewController: UIViewController {
         mainMapView.setUserTrackingMode(.follow, animated: true)
         mainMapView.delegate = self
         
-        // Search
+        // Search manager init
         poiSearchManager?.delegate = self
-        let keywordRequest = AMapPOIKeywordsSearchRequest().then { (request) in
-            request.city = "北京"
-            request.keywords = "立方庭"
-        }
-        poiSearchManager?.aMapPOIKeywordsSearch(keywordRequest)
+        
+        // Search request init
+        poiSearchRequest.cityLimit = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,6 +90,11 @@ extension MapViewController: MAMapViewDelegate {
         if !hasUserLocation {
             mainMapView.resetUserLocation(userLocation: userLocation.location)
             hasUserLocation = !hasUserLocation
+            // Regeocode
+            let reGeoRequest = AMapReGeocodeSearchRequest().then { (request) in
+                request.location = AMapGeoPoint.location(withLatitude: CGFloat(userLocation.coordinate.latitude), longitude: CGFloat(userLocation.coordinate.longitude))
+            }
+            poiSearchManager?.aMapReGoecodeSearch(reGeoRequest)
         }
     }
     
@@ -100,7 +105,7 @@ extension MapViewController: AMapSearchDelegate {
     // MARK: - AMapSearchDelegate 
     
     func aMapSearchRequest(_ request: Any!, didFailWithError error: Error!) {
-        MessageUtil.showError(title: "POI检索错误", message: error.localizedDescription)
+        MessageUtil.showError(title: "检索错误", message: error.localizedDescription)
     }
     
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
@@ -108,6 +113,31 @@ extension MapViewController: AMapSearchDelegate {
             MessageUtil.showError(title: "抱歉", message: "没有找到搜索地点")
             return
         }
+        poiSearchResultController?.poiResult = response.pois
+        poiSearchResultController?.poiTableView.reloadData()
+    }
+    
+    func onReGeocodeSearchDone(_ request: AMapReGeocodeSearchRequest!, response: AMapReGeocodeSearchResponse!) {
+        if let city = response.regeocode.addressComponent.city, !city.isEmpty {
+            poiSearchRequest.city = city
+        }
+        if let province = response.regeocode.addressComponent.province, !province.isEmpty {
+            poiSearchRequest.city = province
+        }
     }
     
 }
+
+extension MapViewController: UISearchResultsUpdating {
+    
+    // MARK: - UISearchResultsUpdating
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+            poiSearchRequest.keywords = searchText
+            poiSearchManager?.aMapPOIKeywordsSearch(poiSearchRequest)
+        }
+    }
+    
+}
+

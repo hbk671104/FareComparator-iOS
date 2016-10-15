@@ -18,6 +18,7 @@
 		407F6E131DB0E73400936C18 /* MessageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F6E121DB0E73400936C18 /* MessageUtil.swift */; };
 		4084A6831DB2155A00B04B85 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084A6821DB2155A00B04B85 /* Extensions.swift */; };
 		4084A6851DB22B9D00B04B85 /* POISearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084A6841DB22B9D00B04B85 /* POISearchResultViewController.swift */; };
+		4084A6871DB23E2E00B04B85 /* POITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084A6861DB23E2E00B04B85 /* POITableViewCell.swift */; };
 		C4F7B38937A537EA44703B1C /* Pods_FareComparator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DC73743D9D1485471B8192 /* Pods_FareComparator.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		407F6E121DB0E73400936C18 /* MessageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageUtil.swift; sourceTree = "<group>"; };
 		4084A6821DB2155A00B04B85 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4084A6841DB22B9D00B04B85 /* POISearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POISearchResultViewController.swift; sourceTree = "<group>"; };
+		4084A6861DB23E2E00B04B85 /* POITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POITableViewCell.swift; sourceTree = "<group>"; };
 		912091598FCC5EF95D9123F1 /* Pods-FareComparator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FareComparator.release.xcconfig"; path = "Pods/Target Support Files/Pods-FareComparator/Pods-FareComparator.release.xcconfig"; sourceTree = "<group>"; };
 		95BDD20D491E81052EA4CCE6 /* Pods-FareComparator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FareComparator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FareComparator/Pods-FareComparator.debug.xcconfig"; sourceTree = "<group>"; };
 		B1DC73743D9D1485471B8192 /* Pods_FareComparator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FareComparator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				403329BC1DB0CDE100F46E61 /* RideDetailTableViewCell.swift */,
+				4084A6861DB23E2E00B04B85 /* POITableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -116,8 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				406D8FC41DB0F57D00B685DC /* MapViewController.swift */,
-				4016D04C1DAE1ABB00858136 /* PriceCompareViewController.swift */,
 				4084A6841DB22B9D00B04B85 /* POISearchResultViewController.swift */,
+				4016D04C1DAE1ABB00858136 /* PriceCompareViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				407F6E131DB0E73400936C18 /* MessageUtil.swift in Sources */,
 				4016D04B1DAE1ABB00858136 /* AppDelegate.swift in Sources */,
 				403329BD1DB0CDE100F46E61 /* RideDetailTableViewCell.swift in Sources */,
+				4084A6871DB23E2E00B04B85 /* POITableViewCell.swift in Sources */,
 				403329B71DB0C97000F46E61 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

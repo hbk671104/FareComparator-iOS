@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mgW-3o-tYy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -95,28 +96,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sq4-Nl-TKn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sq4-Nl-TKn">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="POIDetailCell" rowHeight="85" id="JRQ-0K-zAH">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="85"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="POIDetailCell" rowHeight="80" id="JRQ-0K-zAH" customClass="POITableViewCell" customModule="FareComparator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JRQ-0K-zAH" id="rSj-w3-cpj">
-                                            <frame key="frameInset" width="375" height="84"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationMarker" translatesAutoresizingMaskIntoConstraints="NO" id="HBW-yS-VoZ">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="dmh-Qe-Ghu"/>
+                                                        <constraint firstAttribute="width" secondItem="HBW-yS-VoZ" secondAttribute="height" multiplier="1:1" id="r1c-8k-jLl"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="蜂鸟社区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Cf-hG-L1O">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="9xs-PG-Qi8"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Bgp-lX-U4w"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="普通住宅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4z2-UV-hHD">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="0Qn-7o-7BZ"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="17O-kt-jY8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="海淀区万柳中路33号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVl-xn-xhX">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="5Zu-9o-zPB"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="FQT-Zv-YKG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6Cf-hG-L1O" firstAttribute="leading" secondItem="HBW-yS-VoZ" secondAttribute="trailing" constant="8" id="0lm-Jz-N5F"/>
+                                                <constraint firstItem="HBW-yS-VoZ" firstAttribute="centerY" secondItem="rSj-w3-cpj" secondAttribute="centerY" id="Acp-wB-oad"/>
+                                                <constraint firstItem="XVl-xn-xhX" firstAttribute="bottom" secondItem="4z2-UV-hHD" secondAttribute="bottom" id="EA2-Ac-SUy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4z2-UV-hHD" secondAttribute="bottom" constant="8" id="N1s-g5-FJs"/>
+                                                <constraint firstItem="6Cf-hG-L1O" firstAttribute="top" secondItem="rSj-w3-cpj" secondAttribute="topMargin" constant="8" id="UOy-Vd-u8e"/>
+                                                <constraint firstItem="XVl-xn-xhX" firstAttribute="leading" secondItem="4z2-UV-hHD" secondAttribute="trailing" constant="8" id="jog-p4-Wjo"/>
+                                                <constraint firstItem="HBW-yS-VoZ" firstAttribute="leading" secondItem="rSj-w3-cpj" secondAttribute="leadingMargin" constant="8" id="q7T-uh-UOd"/>
+                                                <constraint firstItem="4z2-UV-hHD" firstAttribute="leading" secondItem="HBW-yS-VoZ" secondAttribute="trailing" constant="8" id="zR5-ob-DRe"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="XVl-xn-xhX" id="WIk-tM-ITK"/>
+                                            <outlet property="nameLabel" destination="6Cf-hG-L1O" id="3W2-IT-R2B"/>
+                                            <outlet property="typeLabel" destination="4z2-UV-hHD" id="2ff-zp-mVS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TmT-S4-InB" id="8T2-JS-YoT"/>
+                                    <outlet property="delegate" destination="TmT-S4-InB" id="vR7-dg-iVI"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sq4-Nl-TKn" secondAttribute="trailing" id="5B3-gN-wnh"/>
-                            <constraint firstItem="sq4-Nl-TKn" firstAttribute="top" secondItem="Wes-Tu-sTE" secondAttribute="top" id="FLX-tr-XlB"/>
+                            <constraint firstItem="sq4-Nl-TKn" firstAttribute="top" secondItem="DPI-hD-Idy" secondAttribute="bottom" id="Njv-wl-xVc"/>
                             <constraint firstItem="oif-ZL-ATh" firstAttribute="top" secondItem="sq4-Nl-TKn" secondAttribute="bottom" id="QTo-xS-YEi"/>
                             <constraint firstItem="sq4-Nl-TKn" firstAttribute="leading" secondItem="Wes-Tu-sTE" secondAttribute="leading" id="fcb-IX-qtS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="poiTableView" destination="sq4-Nl-TKn" id="57M-ft-ie7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfr-zM-U7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,5 +241,6 @@
     </scenes>
     <resources>
         <image name="Locate" width="30" height="30"/>
+        <image name="LocationMarker" width="30" height="30"/>
     </resources>
 </document>

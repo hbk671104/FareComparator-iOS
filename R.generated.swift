@@ -31,14 +31,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 2 images.
   struct image {
     /// Image `Locate`.
     static let locate = Rswift.ImageResource(bundle: R.hostingBundle, name: "Locate")
+    /// Image `LocationMarker`.
+    static let locationMarker = Rswift.ImageResource(bundle: R.hostingBundle, name: "LocationMarker")
     
     /// `UIImage(named: "Locate", bundle: ..., traitCollection: ...)`
     static func locate(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.locate, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "LocationMarker", bundle: ..., traitCollection: ...)`
+    static func locationMarker(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.locationMarker, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
@@ -52,7 +59,7 @@ struct R: Rswift.Validatable {
   /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `POIDetailCell`.
-    static let pOIDetailCell: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "POIDetailCell")
+    static let pOIDetailCell: Rswift.ReuseIdentifier<POITableViewCell> = Rswift.ReuseIdentifier(identifier: "POIDetailCell")
     /// Reuse identifier `RideDetailCell`.
     static let rideDetailCell: Rswift.ReuseIdentifier<RideDetailTableViewCell> = Rswift.ReuseIdentifier(identifier: "RideDetailCell")
     
@@ -135,6 +142,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
+        if UIKit.UIImage(named: "LocationMarker") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'LocationMarker' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Locate") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Locate' is used in storyboard 'Main', but couldn't be loaded.") }
         if _R.storyboard.main().pOISearchResultViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pOISearchResultViewController' could not be loaded from storyboard 'Main' as 'POISearchResultViewController'.") }
       }

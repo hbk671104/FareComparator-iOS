@@ -9,7 +9,10 @@
 import UIKit
 
 class POISearchResultViewController: UIViewController {
-
+    
+    @IBOutlet weak var poiTableView: UITableView!
+    var poiResult: [AMapPOI] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,14 +37,24 @@ class POISearchResultViewController: UIViewController {
 
 }
 
-extension POISearchResultViewController: UISearchResultsUpdating {
-
-    // MARK: - UISearchResultsUpdating
+extension POISearchResultViewController : UITableViewDelegate, UITableViewDataSource {
     
-    func updateSearchResults(for searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
-            print(searchText)
-        }
+    // MARK: - UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.poiResult.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let poiDetailCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.pOIDetailCell, for: indexPath)!
+        poiDetailCell.poiModal = self.poiResult[indexPath.row]
+        return poiDetailCell
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
 }
