@@ -84,7 +84,7 @@
             </objects>
             <point key="canvasLocation" x="2599" y="139"/>
         </scene>
-        <!--Search Result View Controller-->
+        <!--Empty Data Set Delegate-->
         <scene sceneID="MmB-MO-f9T">
             <objects>
                 <viewController storyboardIdentifier="POISearchResultViewController" id="TmT-S4-InB" customClass="POISearchResultViewController" customModule="FareComparator" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,6 +98,11 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sq4-Nl-TKn">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="2l5-df-B9o">
+                                    <rect key="frame" x="0.0" y="108" width="375" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="POIDetailCell" rowHeight="80" id="JRQ-0K-zAH" customClass="POITableViewCell" customModule="FareComparator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
@@ -161,6 +166,8 @@
                                 <connections>
                                     <outlet property="dataSource" destination="TmT-S4-InB" id="8T2-JS-YoT"/>
                                     <outlet property="delegate" destination="TmT-S4-InB" id="vR7-dg-iVI"/>
+                                    <outlet property="emptyDataSetDelegate" destination="TmT-S4-InB" id="6wO-D9-grs"/>
+                                    <outlet property="emptyDataSetSource" destination="TmT-S4-InB" id="MB5-QT-tC7"/>
                                 </connections>
                             </tableView>
                         </subviews>

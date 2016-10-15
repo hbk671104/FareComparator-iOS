@@ -31,12 +31,19 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
+    /// Image `ConfusedFace`.
+    static let confusedFace = Rswift.ImageResource(bundle: R.hostingBundle, name: "ConfusedFace")
     /// Image `Locate`.
     static let locate = Rswift.ImageResource(bundle: R.hostingBundle, name: "Locate")
     /// Image `LocationMarker`.
     static let locationMarker = Rswift.ImageResource(bundle: R.hostingBundle, name: "LocationMarker")
+    
+    /// `UIImage(named: "ConfusedFace", bundle: ..., traitCollection: ...)`
+    static func confusedFace(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.confusedFace, compatibleWith: traitCollection)
+    }
     
     /// `UIImage(named: "Locate", bundle: ..., traitCollection: ...)`
     static func locate(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {

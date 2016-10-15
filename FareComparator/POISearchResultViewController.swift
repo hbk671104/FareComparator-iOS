@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class POISearchResultViewController: UIViewController {
     
@@ -64,6 +65,16 @@ extension POISearchResultViewController : UITableViewDelegate, UITableViewDataSo
             mapViewVC.userSelectedDestination = self.poiResult[indexPath.row]
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    
+}
+
+extension POISearchResultViewController: DZNEmptyDataSetSource {
+
+    // MARK: - DZNEmptyDataSetSource
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return R.image.confusedFace()
     }
     
 }

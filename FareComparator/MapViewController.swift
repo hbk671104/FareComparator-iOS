@@ -116,10 +116,6 @@ extension MapViewController: AMapSearchDelegate {
     }
     
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
-        if response.count == 0 {
-            MessageUtil.showError(title: "抱歉", message: "没有找到搜索地点")
-            return
-        }
         poiSearchResultController?.poiResult = response.pois
         poiSearchResultController?.poiTableView.reloadData()
     }
