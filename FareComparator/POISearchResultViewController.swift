@@ -18,6 +18,12 @@ class POISearchResultViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Reset content inset, which shouldn't even exist
+        self.poiTableView.contentInset = UIEdgeInsets.zero
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -54,7 +60,10 @@ extension POISearchResultViewController : UITableViewDelegate, UITableViewDataSo
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let mapViewVC = self.presentingViewController as? MapViewController {
+            mapViewVC.userSelectedDestination = self.poiResult[indexPath.row]
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
 }

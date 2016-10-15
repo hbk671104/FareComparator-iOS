@@ -17,6 +17,13 @@ class MapViewController: UIViewController {
     var hasUserLocation = false
     let poiSearchResultController = R.storyboard.main.pOISearchResultViewController()
     var searchController : UISearchController!
+    var userSelectedDestination: AMapPOI? {
+        didSet {
+            if let poi = userSelectedDestination {
+                print(poi.name)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
