@@ -44,8 +44,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>滴步比价需要使用您的当前位置，以便计算车费与接驾时间</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>滴步比价需要获取您的当前位置，以便计算车费与接驾时间</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

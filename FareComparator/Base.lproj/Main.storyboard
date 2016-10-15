@@ -108,6 +108,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KRf-sa-4S0">
+                        <barButtonItem key="leftBarButtonItem" image="Locate" id="PWh-as-TZ0">
+                            <connections>
+                                <action selector="locateUser:" destination="w83-03-x3j" id="GXG-cs-FOf"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="价格" id="TxY-ne-u8M">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" identifier="priceComparePush" id="Qud-I8-fWv"/>
@@ -141,4 +146,7 @@
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Locate" width="30" height="30"/>
+    </resources>
 </document>

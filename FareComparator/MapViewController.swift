@@ -11,6 +11,7 @@ import UIKit
 class MapViewController: UIViewController {
 
 	@IBOutlet weak var mainMapView: MAMapView!
+    var userCurrentLocation: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +22,19 @@ class MapViewController: UIViewController {
 		mainMapView.showsScale = true
 		mainMapView.showsCompass = true
         mainMapView.showsUserLocation = true
+        mainMapView.setUserTrackingMode(.follow, animated: true)
         mainMapView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK - IB Action
+    
+    @IBAction func locateUser(_ sender: AnyObject) {
+        mainMapView.resetUserLocation(userLocation: userCurrentLocation)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,11 +64,14 @@ extension MapViewController: MAMapViewDelegate {
     // MARK: - MAMapViewDelegate
     
     func mapView(_ mapView: MAMapView!, didFailToLocateUserWithError error: Error!) {
-        MessageUtil.showError(title: "Error!", message: error.localizedDescription)
+        MessageUtil.showError(title: "Error", message: error.localizedDescription)
     }
     
     func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
-        print(userLocation.coordinate)
+        if userCurrentLocation == nil {
+            mainMapView.resetUserLocation(userLocation: userLocation.location)
+        }
+        userCurrentLocation = userLocation.location
     }
     
 }
