@@ -23,10 +23,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideDetailCell" rowHeight="80" id="RHs-hD-QWL" customClass="RideDetailTableViewCell" customModule="FareComparator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RHs-hD-QWL" id="Nxn-2i-89U">
-                                            <frame key="frameInset" width="1000" height="79.5"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人民优步" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-uw-vga">
@@ -115,7 +115,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="蜂鸟社区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Cf-hG-L1O">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="9xs-PG-Qi8"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Bgp-lX-U4w"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -132,6 +131,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="普通住宅" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VV-ht-DM3">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="hfn-a6-Fdg"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="kD4-dY-Rkx"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
@@ -144,7 +144,7 @@
                                                 <constraint firstItem="1VV-ht-DM3" firstAttribute="trailing" secondItem="rSj-w3-cpj" secondAttribute="trailingMargin" id="9GW-dj-3Uz"/>
                                                 <constraint firstItem="HBW-yS-VoZ" firstAttribute="centerY" secondItem="rSj-w3-cpj" secondAttribute="centerY" id="Acp-wB-oad"/>
                                                 <constraint firstItem="XVl-xn-xhX" firstAttribute="trailing" secondItem="rSj-w3-cpj" secondAttribute="trailingMargin" id="BEf-C5-X6z"/>
-                                                <constraint firstItem="1VV-ht-DM3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Cf-hG-L1O" secondAttribute="trailing" constant="5" id="EDc-Ro-g8p"/>
+                                                <constraint firstItem="1VV-ht-DM3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Cf-hG-L1O" secondAttribute="trailing" constant="8" id="EDc-Ro-g8p"/>
                                                 <constraint firstItem="XVl-xn-xhX" firstAttribute="leading" secondItem="6Cf-hG-L1O" secondAttribute="leading" id="GHc-QX-Yn6"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="XVl-xn-xhX" secondAttribute="bottom" constant="8" id="GoE-ff-GgG"/>
                                                 <constraint firstItem="6Cf-hG-L1O" firstAttribute="top" secondItem="rSj-w3-cpj" secondAttribute="topMargin" constant="8" id="UOy-Vd-u8e"/>
