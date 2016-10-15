@@ -11,33 +11,19 @@ import UIKit
 class MapViewController: UIViewController {
 
 	@IBOutlet weak var mainMapView: MAMapView!
-	let locationManager = AMapLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do avaradditional setup after loading the view.
         
-        // Start user location request
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        self.locationManager.locationTimeout = 5
-        self.locationManager.reGeocodeTimeout = 5
-        self.locationManager.requestLocation(withReGeocode: true) { (location, reGeocode, error) in
-            if let err = error {
-                MessageUtil.showError(title: "Error!", message: err.localizedDescription)
-            } else {
-                self.mainMapView.showsUserLocation = true
-                self.mainMapView.setCenter(location!.coordinate, animated: true)
-                self.mainMapView.setZoomLevel(15, animated: true)
-            }
-        }
-        
+        // Map init
 		mainMapView.showsScale = true
 		mainMapView.showsCompass = true
-        // TODO: 换高德定位
-        //mainMapView.showsUserLocation = true
+        mainMapView.showsUserLocation = true
+        mainMapView.delegate = self
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -63,4 +49,18 @@ class MapViewController: UIViewController {
     }
     */
 
+}
+
+extension MapViewController: MAMapViewDelegate {
+
+    // MARK: - MAMapViewDelegate
+    
+    func mapView(_ mapView: MAMapView!, didFailToLocateUserWithError error: Error!) {
+        MessageUtil.showError(title: "Error!", message: error.localizedDescription)
+    }
+    
+    func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
+        print(userLocation.coordinate)
+    }
+    
 }
