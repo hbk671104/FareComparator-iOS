@@ -15,7 +15,7 @@ class MainNavigationController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let revealingSplashView = RevealingSplashView(iconImage: R.image.locationMarker()!, iconInitialSize: CGSize(width: 70, height: 70), backgroundColor: UIColor.white)
+        let revealingSplashView = RevealingSplashView(iconImage: R.image.locationMarker()!, iconInitialSize: CGSize(width: 80, height: 80), backgroundColor: UIColor.white)
         self.view.addSubview(revealingSplashView)
         revealingSplashView.startAnimation()
     }
