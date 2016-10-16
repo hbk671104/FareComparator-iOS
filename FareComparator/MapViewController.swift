@@ -12,15 +12,33 @@ import Then
 class MapViewController: UIViewController {
 
 	@IBOutlet weak var mainMapView: MAMapView!
+    
+    // Search
     let poiSearchManager = AMapSearchAPI()
     let poiSearchRequest = AMapPOIKeywordsSearchRequest()
-    var hasUserLocation = false
+    
+    // Child controllers
     let poiSearchResultController = R.storyboard.main.pOISearchResultViewController()
     var searchController : UISearchController!
+    
+    // Misc
+    var hasUserLocation = false
     var userSelectedDestination: AMapPOI? {
         didSet {
             if let poi = userSelectedDestination {
-                print(poi.name)
+                let pointAnnotation = MAPointAnnotation()
+                pointAnnotation.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(poi.location.latitude), CLLocationDegrees(poi.location.longitude))
+                pointAnnotation.title = poi.name
+                pointAnnotation.subtitle = poi.address
+                if !mainMapView.annotations.isEmpty {
+                    for anno in mainMapView.annotations {
+                        if anno is MAPointAnnotation {
+                            mainMapView.removeAnnotation(anno as! MAPointAnnotation)
+                        }
+                    }
+                }
+                mainMapView.addAnnotation(pointAnnotation)
+                mainMapView.showAnnotations([pointAnnotation], animated: true)
             }
         }
     }
@@ -104,6 +122,16 @@ extension MapViewController: MAMapViewDelegate {
             poiSearchManager?.aMapReGoecodeSearch(reGeoRequest)
         }
     }
+    
+//    func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
+//        let reuseId = "pointReuseIndentifier"
+//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+//        if annotationView == nil {
+//            annotationView = MAAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+//        }
+//        annotationView?.canShowCallout = true
+//        return annotationView
+//    }
     
 }
 
