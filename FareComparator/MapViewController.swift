@@ -112,7 +112,7 @@ extension MapViewController: MAMapViewDelegate {
     }
     
     func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
-        if !hasUserLocation {
+        if !hasUserLocation, updatingLocation {
             mainMapView.resetUserLocation(userLocation: userLocation.location)
             hasUserLocation = !hasUserLocation
             // Regeocode
@@ -123,15 +123,18 @@ extension MapViewController: MAMapViewDelegate {
         }
     }
     
-//    func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
-//        let reuseId = "pointReuseIndentifier"
-//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
-//        if annotationView == nil {
-//            annotationView = MAAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-//        }
-//        annotationView?.canShowCallout = true
-//        return annotationView
-//    }
+    func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
+        if annotation is MAPointAnnotation {
+            let reuseId = "pointReuseIndentifier"
+            var annoView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MAPinAnnotationView
+            if annoView == nil {
+                annoView = MAPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId )
+            }
+            annoView!.canShowCallout = true
+            return annoView
+        }
+        return nil
+    }
     
 }
 
