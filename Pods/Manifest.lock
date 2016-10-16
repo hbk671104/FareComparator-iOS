@@ -10,6 +10,7 @@ PODS:
   - R.swift (3.1.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
+  - RevealingSplashView (0.0.9)
   - SwiftMessages (3.0.1)
   - Then (2.0.0)
   - UberRides (0.5.2):
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - IBAnimatable
   - R.swift
+  - RevealingSplashView
   - SwiftMessages
   - Then
   - UberRides (from `https://github.com/long/rides-ios-sdk.git`, branch `swift-3-dev`)
@@ -44,10 +46,11 @@ SPEC CHECKSUMS:
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
   R.swift: 14400e5784224d1e4e59a8fc5549198c7e8fe360
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
+  RevealingSplashView: 80b880b8eb014ea01fa0d15a9da26ba40d31a714
   SwiftMessages: 945e2928c6e819776abc8f480eb288c42cdd9e5b
   Then: 460074ffe907de3536d5e88f189dac5ef7cf0869
   UberRides: 96eb232374a6e8e616c20fdba83c2643a6ad08dc
 
-PODFILE CHECKSUM: 7b2ada06b57ff9b50986720ca1c5c1ab27cad49e
+PODFILE CHECKSUM: 75afcbcc98838acaaa05fc39f3cbb42af432238e
 
 COCOAPODS: 1.0.1

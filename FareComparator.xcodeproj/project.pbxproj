@@ -15,6 +15,7 @@
 		403329B71DB0C97000F46E61 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403329B61DB0C97000F46E61 /* R.generated.swift */; };
 		403329BD1DB0CDE100F46E61 /* RideDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403329BC1DB0CDE100F46E61 /* RideDetailTableViewCell.swift */; };
 		406D8FC51DB0F57D00B685DC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D8FC41DB0F57D00B685DC /* MapViewController.swift */; };
+		406DD7241DB33B3D00AC8A31 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406DD7231DB33B3D00AC8A31 /* MainNavigationController.swift */; };
 		407F6E131DB0E73400936C18 /* MessageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F6E121DB0E73400936C18 /* MessageUtil.swift */; };
 		4084A6831DB2155A00B04B85 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084A6821DB2155A00B04B85 /* Extensions.swift */; };
 		4084A6851DB22B9D00B04B85 /* POISearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084A6841DB22B9D00B04B85 /* POISearchResultViewController.swift */; };
@@ -34,6 +35,7 @@
 		403329BC1DB0CDE100F46E61 /* RideDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideDetailTableViewCell.swift; sourceTree = "<group>"; };
 		406D8FC11DB0F3CC00B685DC /* FareComparator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FareComparator-Bridging-Header.h"; sourceTree = "<group>"; };
 		406D8FC41DB0F57D00B685DC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		406DD7231DB33B3D00AC8A31 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		407F6E121DB0E73400936C18 /* MessageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageUtil.swift; sourceTree = "<group>"; };
 		4084A6821DB2155A00B04B85 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4084A6841DB22B9D00B04B85 /* POISearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POISearchResultViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		403329BB1DB0CBD300F46E61 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				406DD7231DB33B3D00AC8A31 /* MainNavigationController.swift */,
 				406D8FC41DB0F57D00B685DC /* MapViewController.swift */,
 				4084A6841DB22B9D00B04B85 /* POISearchResultViewController.swift */,
 				4016D04C1DAE1ABB00858136 /* PriceCompareViewController.swift */,
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				406DD7241DB33B3D00AC8A31 /* MainNavigationController.swift in Sources */,
 				4016D04D1DAE1ABB00858136 /* PriceCompareViewController.swift in Sources */,
 				406D8FC51DB0F57D00B685DC /* MapViewController.swift in Sources */,
 				4084A6851DB22B9D00B04B85 /* POISearchResultViewController.swift in Sources */,

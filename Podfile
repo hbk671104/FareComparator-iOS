@@ -14,6 +14,7 @@ target 'FareComparator' do
   pod 'AMapSearch' #搜索服务SDK
   pod 'Then'
   pod 'DZNEmptyDataSet'
+  pod 'RevealingSplashView'
 end
 
 post_install do |installer|
