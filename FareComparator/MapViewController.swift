@@ -38,7 +38,7 @@ class MapViewController: UIViewController {
                     }
                 }
                 mainMapView.addAnnotation(pointAnnotation)
-                mainMapView.showAnnotations([pointAnnotation], animated: true)
+                mainMapView.showAnnotations(mainMapView.annotations, animated: true)
             }
         }
     }
