@@ -12,6 +12,7 @@ import Then
 class MapViewController: UIViewController {
 
 	@IBOutlet weak var mainMapView: MAMapView!
+	@IBOutlet weak var locateUserButton: UIButton!
     
     // Search
     let poiSearchManager = AMapSearchAPI()
@@ -104,7 +105,11 @@ class MapViewController: UIViewController {
 extension MapViewController: MAMapViewDelegate {
 
     // MARK: - MAMapViewDelegate
-    
+	
+	func mapViewDidFinishLoadingMap(_ mapView: MAMapView!) {
+		mapView.bringSubview(toFront: locateUserButton)
+	}
+	
     func mapView(_ mapView: MAMapView!, didFailToLocateUserWithError error: Error!) {
         MessageUtil.showError(title: "用户定位错误", message: error.localizedDescription)
     }

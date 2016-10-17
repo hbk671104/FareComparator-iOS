@@ -155,7 +155,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mU4-X4-w5v" customClass="MAMapView">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hs-Gt-mkb">
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="3Hs-Gt-mkb" secondAttribute="height" multiplier="1:1" id="g5D-71-e7S"/>
+                                            <constraint firstAttribute="width" constant="30" id="kPG-Gh-aIz"/>
+                                        </constraints>
+                                        <state key="normal" image="Locate"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3Hs-Gt-mkb" secondAttribute="trailing" constant="15" id="Rwb-Md-Yr2"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Hs-Gt-mkb" secondAttribute="bottom" constant="15" id="oxR-nW-YWP"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -174,6 +187,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="locateUserButton" destination="3Hs-Gt-mkb" id="VZ7-SI-9Wd"/>
                         <outlet property="mainMapView" destination="mU4-X4-w5v" id="YJi-Hl-Epg"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="priceComparePush" id="PaY-cP-FBI"/>
                     </connections>
@@ -210,7 +224,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lzV-jC-F0N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pbn-re-Xnf">
-                        <rect key="frame" x="0.0" y="0.0" width="188" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-tR-odG">
