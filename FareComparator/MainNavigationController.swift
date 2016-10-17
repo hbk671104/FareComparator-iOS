@@ -8,6 +8,7 @@
 
 import UIKit
 import RevealingSplashView
+import ChameleonFramework
 
 class MainNavigationController: UINavigationController {
 
@@ -15,7 +16,7 @@ class MainNavigationController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let revealingSplashView = RevealingSplashView(iconImage: R.image.bartLogo()!, iconInitialSize: CGSize(width: 80, height: 80), backgroundColor: UIColor.white)
+        let revealingSplashView = RevealingSplashView(iconImage: R.image.bartLogo()!, iconInitialSize: CGSize(width: 80, height: 80), backgroundColor: UIColor.flatYellow)
         self.view.addSubview(revealingSplashView)
         revealingSplashView.startAnimation()
     }

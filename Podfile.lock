@@ -4,6 +4,9 @@ PODS:
   - AMapFoundation (1.3.1)
   - AMapSearch (4.3.0):
     - AMapFoundation (~> 1.2)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - DZNEmptyDataSet (1.8.1)
   - IBAnimatable (3.0)
   - ObjectMapper (2.1.0)
@@ -19,6 +22,7 @@ PODS:
 DEPENDENCIES:
   - AMap3DMap
   - AMapSearch
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`, branch `swift3-readme`)
   - DZNEmptyDataSet
   - IBAnimatable
   - R.swift
@@ -28,11 +32,17 @@ DEPENDENCIES:
   - UberRides (from `https://github.com/long/rides-ios-sdk.git`, branch `swift-3-dev`)
 
 EXTERNAL SOURCES:
+  ChameleonFramework:
+    :branch: swift3-readme
+    :git: https://github.com/ViccAlexander/Chameleon.git
   UberRides:
     :branch: swift-3-dev
     :git: https://github.com/long/rides-ios-sdk.git
 
 CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6ae796013eb01f0b5410e09e5a439aa1b328c270
+    :git: https://github.com/ViccAlexander/Chameleon.git
   UberRides:
     :commit: 7ba4b33fe464de3520bccbb8eb35cb4015363130
     :git: https://github.com/long/rides-ios-sdk.git
@@ -41,6 +51,7 @@ SPEC CHECKSUMS:
   AMap3DMap: 7ee2abfcb41651bbf80ff18ac5446c0ae46a671a
   AMapFoundation: 636834a27cd003084f56b4232f3031e6a44c7e7e
   AMapSearch: c90cc018a6c5281af17af6058ca99218a4d4b442
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   IBAnimatable: 5ac8e4c9f879e1840041362e41f7728bbbf16b35
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
@@ -51,6 +62,6 @@ SPEC CHECKSUMS:
   Then: 460074ffe907de3536d5e88f189dac5ef7cf0869
   UberRides: 96eb232374a6e8e616c20fdba83c2643a6ad08dc
 
-PODFILE CHECKSUM: 75afcbcc98838acaaa05fc39f3cbb42af432238e
+PODFILE CHECKSUM: 98ecb9fab0fe9d54cc50a44b2add5645d13d1ad4
 
 COCOAPODS: 1.0.1
