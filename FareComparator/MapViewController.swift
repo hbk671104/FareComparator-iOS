@@ -8,11 +8,13 @@
 
 import UIKit
 import Then
+import IBAnimatable
 
 class MapViewController: UIViewController {
 
 	@IBOutlet weak var mainMapView: MAMapView!
-	@IBOutlet weak var locateUserButton: UIButton!
+	@IBOutlet weak var locateUserButton: AnimatableButton!
+    @IBOutlet weak var comparePriceButton: AnimatableButton!
     
     // Search
     let poiSearchManager = AMapSearchAPI()
@@ -39,6 +41,7 @@ class MapViewController: UIViewController {
                 }
                 mainMapView.addAnnotation(pointAnnotation)
                 mainMapView.showAnnotations(mainMapView.annotations, animated: true)
+                comparePriceButton.isEnabled = true
             }
         }
     }
@@ -89,6 +92,10 @@ class MapViewController: UIViewController {
         mainMapView.resetUserLocation(userLocation: mainMapView.userLocation.location)
     }
     
+    @IBAction func startPriceCompare(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: R.segue.mapViewController.priceComparePush, sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == R.segue.mapViewController.priceComparePush.identifier {
             let destVC = segue.destination as! PriceCompareViewController
@@ -126,6 +133,7 @@ extension MapViewController: MAMapViewDelegate {
     func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
         if poiSearchRequest.city.isEmpty, updatingLocation {
 			mapView.bringSubview(toFront: locateUserButton)
+            mapView.bringSubview(toFront: comparePriceButton)
 			locateUserButton.tintColor = self.view.tintColor
             mapView.resetUserLocation(userLocation: userLocation.location)
             // Regeocode

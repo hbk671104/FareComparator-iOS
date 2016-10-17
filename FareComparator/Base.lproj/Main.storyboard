@@ -64,7 +64,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JRQ-0K-zAH" id="rSj-w3-cpj">
-                                            <frame key="frameInset" width="375" height="79.5"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationMarker" translatesAutoresizingMaskIntoConstraints="NO" id="HBW-yS-VoZ">
@@ -164,7 +164,7 @@
                                         <state key="normal" image="Locate"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" red="0.1764705882" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                 <real key="value" value="0.5"/>
@@ -183,10 +183,39 @@
                                             <action selector="locateUser:" destination="w83-03-x3j" eventType="touchUpInside" id="OxC-ma-cDk"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFq-So-YkF" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="0F6-zJ-g23"/>
+                                        </constraints>
+                                        <state key="normal" title="点我比价"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="startPriceCompare:" destination="w83-03-x3j" eventType="touchUpInside" id="k2f-p3-eI1"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="lFq-So-YkF" firstAttribute="leading" secondItem="mU4-X4-w5v" secondAttribute="leading" constant="15" id="FtD-Pf-3xi"/>
                                     <constraint firstAttribute="trailing" secondItem="3Hs-Gt-mkb" secondAttribute="trailing" constant="15" id="Rwb-Md-Yr2"/>
+                                    <constraint firstItem="3Hs-Gt-mkb" firstAttribute="leading" secondItem="lFq-So-YkF" secondAttribute="trailing" constant="8" id="Yer-uV-pU0"/>
+                                    <constraint firstAttribute="bottom" secondItem="lFq-So-YkF" secondAttribute="bottom" constant="15" id="hEj-4h-frQ"/>
                                     <constraint firstAttribute="bottom" secondItem="3Hs-Gt-mkb" secondAttribute="bottom" constant="15" id="oxR-nW-YWP"/>
                                 </constraints>
                             </view>
@@ -201,14 +230,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="KRf-sa-4S0"/>
                     <connections>
-                        <outlet property="locateUserButton" destination="3Hs-Gt-mkb" id="VZ7-SI-9Wd"/>
+                        <outlet property="comparePriceButton" destination="lFq-So-YkF" id="37u-Ya-hOc"/>
+                        <outlet property="locateUserButton" destination="3Hs-Gt-mkb" id="cJp-TA-OJU"/>
                         <outlet property="mainMapView" destination="mU4-X4-w5v" id="YJi-Hl-Epg"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="priceComparePush" id="PaY-cP-FBI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ob-32-skU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="139"/>
+            <point key="canvasLocation" x="1837.5999999999999" y="138.98050974512745"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="Z1D-vD-dop">
@@ -241,30 +271,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-tR-odG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-tR-odG">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="98g-gg-dbu">
-                                    <rect key="frame" x="0.0" y="158" width="187.5" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="128" width="1000" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideDetailCell" rowHeight="130" id="RHs-hD-QWL" customClass="RideDetailTableViewCell" customModule="FareComparator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="187.5" height="130"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideDetailCell" rowHeight="100" id="RHs-hD-QWL" customClass="RideDetailTableViewCell" customModule="FareComparator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RHs-hD-QWL" id="Nxn-2i-89U">
-                                            <frame key="frameInset" width="187.5" height="129.5"/>
+                                            <frame key="frameInset" width="1000" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaH-r1-2yX">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="Pag-ir-oow"/>
-                                                        <constraint firstAttribute="height" constant="21" id="Y8H-IM-M6y"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人民优步" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-uw-vga">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="ePC-Zc-PbW"/>
@@ -274,11 +295,20 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaH-r1-2yX">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="Pag-ir-oow"/>
+                                                        <constraint firstAttribute="height" constant="21" id="Y8H-IM-M6y"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="EaH-r1-2yX" firstAttribute="centerX" secondItem="Pcx-uw-vga" secondAttribute="centerX" id="0gi-ku-sum"/>
-                                                <constraint firstItem="Pcx-uw-vga" firstAttribute="top" secondItem="Nxn-2i-89U" secondAttribute="topMargin" constant="15" id="BSs-t6-6uP"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="EaH-r1-2yX" secondAttribute="bottom" constant="20" id="Jei-Da-l9Q"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EaH-r1-2yX" secondAttribute="bottom" constant="12" id="BAN-X6-IlL"/>
+                                                <constraint firstItem="Pcx-uw-vga" firstAttribute="top" secondItem="Nxn-2i-89U" secondAttribute="topMargin" constant="12" id="Pwe-Bl-gtS"/>
                                                 <constraint firstItem="Pcx-uw-vga" firstAttribute="centerX" secondItem="Nxn-2i-89U" secondAttribute="centerX" id="Zs1-Hr-sPV"/>
                                             </constraints>
                                         </tableViewCellContentView>
