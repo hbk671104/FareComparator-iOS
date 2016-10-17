@@ -64,7 +64,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JRQ-0K-zAH" id="rSj-w3-cpj">
-                                            <frame key="frameInset" width="375" height="79"/>
+                                            <frame key="frameInset" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationMarker" translatesAutoresizingMaskIntoConstraints="NO" id="HBW-yS-VoZ">
@@ -241,45 +241,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-tR-odG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-tR-odG">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="98g-gg-dbu">
-                                    <rect key="frame" x="0.0" y="108" width="188" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="158" width="187.5" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideDetailCell" rowHeight="80" id="RHs-hD-QWL" customClass="RideDetailTableViewCell" customModule="FareComparator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="187" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideDetailCell" rowHeight="130" id="RHs-hD-QWL" customClass="RideDetailTableViewCell" customModule="FareComparator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="187.5" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RHs-hD-QWL" id="Nxn-2i-89U">
-                                            <frame key="frameInset" width="188" height="79"/>
+                                            <frame key="frameInset" width="187.5" height="129"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人民优步" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-uw-vga">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="ePC-Zc-PbW"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="pQK-cF-JYE"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaH-r1-2yX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaH-r1-2yX">
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="Pag-ir-oow"/>
                                                         <constraint firstAttribute="height" constant="21" id="Y8H-IM-M6y"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人民优步" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-uw-vga">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="ePC-Zc-PbW"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="pQK-cF-JYE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="EaH-r1-2yX" firstAttribute="centerY" secondItem="Pcx-uw-vga" secondAttribute="centerY" id="VTZ-X2-87K"/>
-                                                <constraint firstItem="EaH-r1-2yX" firstAttribute="trailing" secondItem="Nxn-2i-89U" secondAttribute="trailingMargin" constant="-15" id="oSq-n6-0mp"/>
-                                                <constraint firstItem="Pcx-uw-vga" firstAttribute="centerY" secondItem="Nxn-2i-89U" secondAttribute="centerY" id="pvV-FM-9x4"/>
-                                                <constraint firstItem="Pcx-uw-vga" firstAttribute="leading" secondItem="Nxn-2i-89U" secondAttribute="leadingMargin" constant="15" id="vqQ-Se-aPb"/>
+                                                <constraint firstItem="EaH-r1-2yX" firstAttribute="centerX" secondItem="Pcx-uw-vga" secondAttribute="centerX" id="0gi-ku-sum"/>
+                                                <constraint firstItem="Pcx-uw-vga" firstAttribute="top" secondItem="Nxn-2i-89U" secondAttribute="topMargin" constant="15" id="BSs-t6-6uP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EaH-r1-2yX" secondAttribute="bottom" constant="20" id="Jei-Da-l9Q"/>
+                                                <constraint firstItem="Pcx-uw-vga" firstAttribute="centerX" secondItem="Nxn-2i-89U" secondAttribute="centerX" id="Zs1-Hr-sPV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
