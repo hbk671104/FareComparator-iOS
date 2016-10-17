@@ -52,6 +52,7 @@ class MapViewController: UIViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "请输入目的地..."
+		searchController.searchBar.barTintColor = UIColor.flatYellow
         navigationItem.titleView = searchController.searchBar
         definesPresentationContext = true
         

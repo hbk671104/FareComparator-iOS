@@ -29,9 +29,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wFR-ON-61Q" secondAttribute="bottom" id="WYf-5l-cW2"/>
+                            <constraint firstAttribute="trailing" secondItem="wFR-ON-61Q" secondAttribute="trailing" id="Z2z-T2-vno"/>
                             <constraint firstItem="wFR-ON-61Q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="ZTo-sZ-hxX"/>
                             <constraint firstItem="wFR-ON-61Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pCg-bZ-Kgf"/>
-                            <constraint firstItem="wFR-ON-61Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yU9-Sd-Tjx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="滴步比价" id="sMM-3i-N0u"/>
@@ -64,7 +64,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JRQ-0K-zAH" id="rSj-w3-cpj">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationMarker" translatesAutoresizingMaskIntoConstraints="NO" id="HBW-yS-VoZ">
@@ -205,14 +205,18 @@
         <scene sceneID="xqd-zV-GgG">
             <objects>
                 <viewController id="BKR-lz-FkW" customClass="UberPriceViewController" customModule="FareComparator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hYS-8k-w8L"/>
+                        <viewControllerLayoutGuide type="bottom" id="lzV-jC-F0N"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pbn-re-Xnf">
-                        <rect key="frame" x="0.0" y="0.0" width="187" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="188" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-tR-odG">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="98g-gg-dbu">
-                                    <rect key="frame" x="0.0" y="108" width="187" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="108" width="188" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
@@ -221,7 +225,7 @@
                                         <rect key="frame" x="0.0" y="28" width="187" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RHs-hD-QWL" id="Nxn-2i-89U">
-                                            <frame key="frameInset" width="187" height="79"/>
+                                            <frame key="frameInset" width="188" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人民优步" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-uw-vga">
