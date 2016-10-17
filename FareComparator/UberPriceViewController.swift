@@ -9,6 +9,7 @@
 import UIKit
 import UberRides
 import DZNEmptyDataSet
+import MJRefresh
 
 class UberPriceViewController: UIViewController {
 
@@ -22,25 +23,17 @@ class UberPriceViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        uberTableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.loadPriceEstimate()
+        }).then({ (header) in
+            header.lastUpdatedTimeLabel.isHidden = true
+            header.stateLabel.isHidden = true
+        })
     }
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		if let parentVC = self.parent as? PriceCompareViewController {
-			_ = paramsBuilder.setDropoffLocation(parentVC.userDropoffLocation)
-			_ = paramsBuilder.setPickupLocation(parentVC.userPickupLocation)
-			// Fetch price estimate
-			self.rideClient.fetchPriceEstimates(pickupLocation: parentVC.userPickupLocation, dropoffLocation: parentVC.userDropoffLocation, completion: { (priceEstimates, response) in
-				if response.error == nil {
-					self.uberPriceEstimate = priceEstimates
-					DispatchQueue.main.async {
-						self.uberTableView.reloadData()
-					}
-				} else {
-					MessageUtil.showError(title: response.error?.code, message: response.error?.title)
-				}
-			})
-		}
+		uberTableView.mj_header.beginRefreshing()
 	}
 	
     override func didReceiveMemoryWarning() {
@@ -48,7 +41,25 @@ class UberPriceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func loadPriceEstimate() {
+        if let parentVC = self.parent as? PriceCompareViewController {
+            _ = paramsBuilder.setDropoffLocation(parentVC.userDropoffLocation)
+            _ = paramsBuilder.setPickupLocation(parentVC.userPickupLocation)
+            // Fetch price estimate
+            self.rideClient.fetchPriceEstimates(pickupLocation: parentVC.userPickupLocation, dropoffLocation: parentVC.userDropoffLocation, completion: { [weak self](priceEstimates, response) in
+                if response.error == nil {
+                    self?.uberPriceEstimate = priceEstimates
+                    DispatchQueue.main.async {
+                        self?.uberTableView.reloadData()
+                    }
+                } else {
+                    MessageUtil.showError(title: response.error?.code, message: response.error?.title)
+                }
+                self?.uberTableView.mj_header.endRefreshing()
+            })
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

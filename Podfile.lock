@@ -9,6 +9,7 @@ PODS:
     - ChameleonFramework/Default
   - DZNEmptyDataSet (1.8.1)
   - IBAnimatable (3.0)
+  - MJRefresh (3.1.12)
   - ObjectMapper (2.1.0)
   - R.swift (3.1.0):
     - R.swift.Library (~> 3.0.2)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`, branch `swift3-readme`)
   - DZNEmptyDataSet
   - IBAnimatable
+  - MJRefresh
   - R.swift
   - RevealingSplashView
   - SwiftMessages
@@ -54,6 +56,7 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   IBAnimatable: 5ac8e4c9f879e1840041362e41f7728bbbf16b35
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
   R.swift: 14400e5784224d1e4e59a8fc5549198c7e8fe360
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
@@ -62,6 +65,6 @@ SPEC CHECKSUMS:
   Then: 460074ffe907de3536d5e88f189dac5ef7cf0869
   UberRides: 96eb232374a6e8e616c20fdba83c2643a6ad08dc
 
-PODFILE CHECKSUM: 98ecb9fab0fe9d54cc50a44b2add5645d13d1ad4
+PODFILE CHECKSUM: df2dca1ada300baece99928f8f89705de1a52a5e
 
 COCOAPODS: 1.0.1
