@@ -21,8 +21,7 @@ class MapViewController: UIViewController {
     let poiSearchResultController = R.storyboard.main.pOISearchResultViewController()
     var searchController : UISearchController!
     
-    // Misc
-    var hasUserLocation = false
+    // Selected destination
     var userSelectedDestination: AMapPOI? {
         didSet {
             if let poi = userSelectedDestination {
@@ -112,9 +111,8 @@ extension MapViewController: MAMapViewDelegate {
     }
     
     func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
-        if !hasUserLocation, updatingLocation {
+        if poiSearchRequest.city == nil, updatingLocation {
             mainMapView.resetUserLocation(userLocation: userLocation.location)
-            hasUserLocation = !hasUserLocation
             // Regeocode
             let reGeoRequest = AMapReGeocodeSearchRequest().then { (request) in
                 request.location = AMapGeoPoint.location(withLatitude: CGFloat(userLocation.coordinate.latitude), longitude: CGFloat(userLocation.coordinate.longitude))
