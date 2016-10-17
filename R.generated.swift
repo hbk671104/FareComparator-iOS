@@ -31,14 +31,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
+    /// Image `BartLogo`.
+    static let bartLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "BartLogo")
     /// Image `ConfusedFace`.
     static let confusedFace = Rswift.ImageResource(bundle: R.hostingBundle, name: "ConfusedFace")
     /// Image `Locate`.
     static let locate = Rswift.ImageResource(bundle: R.hostingBundle, name: "Locate")
     /// Image `LocationMarker`.
     static let locationMarker = Rswift.ImageResource(bundle: R.hostingBundle, name: "LocationMarker")
+    
+    /// `UIImage(named: "BartLogo", bundle: ..., traitCollection: ...)`
+    static func bartLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bartLogo, compatibleWith: traitCollection)
+    }
     
     /// `UIImage(named: "ConfusedFace", bundle: ..., traitCollection: ...)`
     static func confusedFace(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -136,7 +143,7 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
       
       static func validate() throws {
-        if UIKit.UIImage(named: "LocationMarker") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'LocationMarker' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "BartLogo") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'BartLogo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
       }
       
       fileprivate init() {}
