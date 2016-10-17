@@ -69,6 +69,12 @@ class MapViewController: UIViewController {
         
         // Search request init
         poiSearchRequest.cityLimit = true
+		
+		// Navigation item
+		let imageView = UIImageView(frame: CGRect(origin: CGPoint.zero, size:CGSize(width: 35, height: 35)))
+		imageView.image = R.image.bartLogo()
+		let barButtonItem = UIBarButtonItem(customView: imageView)
+		self.navigationItem.leftBarButtonItem = barButtonItem
     }
     
     override func didReceiveMemoryWarning() {
