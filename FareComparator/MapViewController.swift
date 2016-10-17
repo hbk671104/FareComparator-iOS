@@ -81,13 +81,11 @@ class MapViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == R.segue.mapViewController.priceComparePush.identifier {
-//            let destVC = segue.destination as! PriceCompareViewController
-//            destVC.userDropoffLocation = CLLocation(latitude: 40.0611, longitude: 116.62117)
-//            if mainMapView.userLocation != nil {
-//                destVC.userPickupLocation = mainMapView.userLocation.location
-//            }
-//        }
+        if segue.identifier == R.segue.mapViewController.priceComparePush.identifier {
+            let destVC = segue.destination as! PriceCompareViewController
+            destVC.userDropoffLocation = CLLocation(latitude: CLLocationDegrees(userSelectedDestination!.location.latitude), longitude:CLLocationDegrees(userSelectedDestination!.location.longitude))
+			destVC.userPickupLocation = mainMapView.userLocation.location
+        }
     }
 
     /*
@@ -133,6 +131,10 @@ extension MapViewController: MAMapViewDelegate {
         }
         return nil
     }
+	
+	func mapView(_ mapView: MAMapView!, didAnnotationViewCalloutTapped view: MAAnnotationView!) {
+		self.performSegue(withIdentifier: R.segue.mapViewController.priceComparePush, sender: nil)
+	}
     
 }
 
