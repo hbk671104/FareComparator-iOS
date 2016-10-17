@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,70 +20,25 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-tR-odG">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideDetailCell" rowHeight="80" id="RHs-hD-QWL" customClass="RideDetailTableViewCell" customModule="FareComparator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RHs-hD-QWL" id="Nxn-2i-89U">
-                                            <frame key="frameInset" width="375" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人民优步" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-uw-vga">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="ePC-Zc-PbW"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="pQK-cF-JYE"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaH-r1-2yX">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="Pag-ir-oow"/>
-                                                        <constraint firstAttribute="height" constant="21" id="Y8H-IM-M6y"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="EaH-r1-2yX" firstAttribute="centerY" secondItem="Pcx-uw-vga" secondAttribute="centerY" id="VTZ-X2-87K"/>
-                                                <constraint firstItem="EaH-r1-2yX" firstAttribute="trailing" secondItem="Nxn-2i-89U" secondAttribute="trailingMargin" constant="-15" id="oSq-n6-0mp"/>
-                                                <constraint firstItem="Pcx-uw-vga" firstAttribute="centerY" secondItem="Nxn-2i-89U" secondAttribute="centerY" id="pvV-FM-9x4"/>
-                                                <constraint firstItem="Pcx-uw-vga" firstAttribute="leading" secondItem="Nxn-2i-89U" secondAttribute="leadingMargin" constant="15" id="vqQ-Se-aPb"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="rideTypeLabel" destination="Pcx-uw-vga" id="e8k-Ec-sOW"/>
-                                            <outlet property="timeEstimateLabel" destination="EaH-r1-2yX" id="USb-9D-buz"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFR-ON-61Q">
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Cua-AP-4wA"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iD6-qn-TnI"/>
+                                    <segue destination="BKR-lz-FkW" kind="embed" identifier="uberPriceEmbed" id="kEN-zK-BA6"/>
                                 </connections>
-                            </tableView>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ax6-tR-odG" secondAttribute="bottom" id="0ru-wU-ocz"/>
-                            <constraint firstItem="Ax6-tR-odG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IuO-kr-zac"/>
-                            <constraint firstAttribute="trailing" secondItem="Ax6-tR-odG" secondAttribute="trailing" id="bIb-0E-jvK"/>
-                            <constraint firstItem="Ax6-tR-odG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rSc-zU-IUy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wFR-ON-61Q" secondAttribute="bottom" id="WYf-5l-cW2"/>
+                            <constraint firstItem="wFR-ON-61Q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="ZTo-sZ-hxX"/>
+                            <constraint firstItem="wFR-ON-61Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pCg-bZ-Kgf"/>
+                            <constraint firstItem="wFR-ON-61Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yU9-Sd-Tjx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="滴步比价" id="sMM-3i-N0u"/>
-                    <connections>
-                        <outlet property="uberTableView" destination="Ax6-tR-odG" id="LIM-Wn-r8e"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2599" y="139"/>
+            <point key="canvasLocation" x="2597.5999999999999" y="138.98050974512745"/>
         </scene>
         <!--Empty Data Set Delegate-->
         <scene sceneID="MmB-MO-f9T">
@@ -245,6 +201,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASg-h4-s3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--Uber Price View Controller-->
+        <scene sceneID="xqd-zV-GgG">
+            <objects>
+                <viewController id="BKR-lz-FkW" customClass="UberPriceViewController" customModule="FareComparator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pbn-re-Xnf">
+                        <rect key="frame" x="0.0" y="0.0" width="188" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-tR-odG">
+                                <frame key="frameInset" width="188" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideDetailCell" rowHeight="80" id="RHs-hD-QWL" customClass="RideDetailTableViewCell" customModule="FareComparator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="188" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RHs-hD-QWL" id="Nxn-2i-89U">
+                                            <frame key="frameInset" width="188" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人民优步" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-uw-vga">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="ePC-Zc-PbW"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="pQK-cF-JYE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaH-r1-2yX">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="Pag-ir-oow"/>
+                                                        <constraint firstAttribute="height" constant="21" id="Y8H-IM-M6y"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EaH-r1-2yX" firstAttribute="centerY" secondItem="Pcx-uw-vga" secondAttribute="centerY" id="VTZ-X2-87K"/>
+                                                <constraint firstItem="EaH-r1-2yX" firstAttribute="trailing" secondItem="Nxn-2i-89U" secondAttribute="trailingMargin" constant="-15" id="oSq-n6-0mp"/>
+                                                <constraint firstItem="Pcx-uw-vga" firstAttribute="centerY" secondItem="Nxn-2i-89U" secondAttribute="centerY" id="pvV-FM-9x4"/>
+                                                <constraint firstItem="Pcx-uw-vga" firstAttribute="leading" secondItem="Nxn-2i-89U" secondAttribute="leadingMargin" constant="15" id="vqQ-Se-aPb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="rideTypeLabel" destination="Pcx-uw-vga" id="e8k-Ec-sOW"/>
+                                            <outlet property="timeEstimateLabel" destination="EaH-r1-2yX" id="USb-9D-buz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BKR-lz-FkW" id="lXw-kk-6HA"/>
+                                    <outlet property="delegate" destination="BKR-lz-FkW" id="sqQ-le-XPd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="uberTableView" destination="Ax6-tR-odG" id="sxt-XO-06m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ip3-43-Uoh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3394.8000000000002" y="-143.47826086956522"/>
         </scene>
     </scenes>
     <resources>

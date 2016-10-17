@@ -80,7 +80,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
   struct segue {
     /// This struct is generated for `MapViewController`, and contains static references to 1 segues.
     struct mapViewController {
@@ -92,6 +92,21 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func priceComparePush(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, PriceCompareViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.priceComparePush, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
+    /// This struct is generated for `PriceCompareViewController`, and contains static references to 1 segues.
+    struct priceCompareViewController {
+      /// Segue identifier `uberPriceEmbed`.
+      static let uberPriceEmbed: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, PriceCompareViewController, UberPriceViewController> = Rswift.StoryboardSegueIdentifier(identifier: "uberPriceEmbed")
+      
+      /// Optionally returns a typed version of segue `uberPriceEmbed`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func uberPriceEmbed(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, PriceCompareViewController, UberPriceViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.priceCompareViewController.uberPriceEmbed, segue: segue)
       }
       
       fileprivate init() {}
