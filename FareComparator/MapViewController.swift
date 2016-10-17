@@ -79,6 +79,7 @@ class MapViewController: UIViewController {
     // MARK - IB Action
     
     @IBAction func locateUser(_ sender: AnyObject) {
+		locateUserButton.tintColor = self.view.tintColor
         mainMapView.resetUserLocation(userLocation: mainMapView.userLocation.location)
     }
     
@@ -106,8 +107,10 @@ extension MapViewController: MAMapViewDelegate {
 
     // MARK: - MAMapViewDelegate
 	
-	func mapViewDidFinishLoadingMap(_ mapView: MAMapView!) {
-		mapView.bringSubview(toFront: locateUserButton)
+	func mapView(_ mapView: MAMapView!, mapWillMoveByUser wasUserAction: Bool) {
+		if wasUserAction {
+			locateUserButton.tintColor = UIColor.flatGray
+		}
 	}
 	
     func mapView(_ mapView: MAMapView!, didFailToLocateUserWithError error: Error!) {
@@ -116,7 +119,9 @@ extension MapViewController: MAMapViewDelegate {
     
     func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
         if poiSearchRequest.city.isEmpty, updatingLocation {
-            mainMapView.resetUserLocation(userLocation: userLocation.location)
+			mapView.bringSubview(toFront: locateUserButton)
+			locateUserButton.tintColor = self.view.tintColor
+            mapView.resetUserLocation(userLocation: userLocation.location)
             // Regeocode
             let reGeoRequest = AMapReGeocodeSearchRequest().then { (request) in
                 request.location = AMapGeoPoint.location(withLatitude: CGFloat(userLocation.coordinate.latitude), longitude: CGFloat(userLocation.coordinate.longitude))

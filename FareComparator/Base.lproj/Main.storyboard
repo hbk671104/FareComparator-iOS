@@ -156,12 +156,32 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mU4-X4-w5v" customClass="MAMapView">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hs-Gt-mkb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hs-Gt-mkb" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="3Hs-Gt-mkb" secondAttribute="height" multiplier="1:1" id="g5D-71-e7S"/>
-                                            <constraint firstAttribute="width" constant="30" id="kPG-Gh-aIz"/>
+                                            <constraint firstAttribute="width" constant="40" id="kPG-Gh-aIz"/>
                                         </constraints>
                                         <state key="normal" image="Locate"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.1764705882" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="locateUser:" destination="w83-03-x3j" eventType="touchUpInside" id="OxC-ma-cDk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,13 +199,7 @@
                             <constraint firstItem="TeT-sO-Sm0" firstAttribute="top" secondItem="mU4-X4-w5v" secondAttribute="bottom" id="v9d-ml-DD7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KRf-sa-4S0">
-                        <barButtonItem key="leftBarButtonItem" image="Locate" id="PWh-as-TZ0">
-                            <connections>
-                                <action selector="locateUser:" destination="w83-03-x3j" id="GXG-cs-FOf"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="KRf-sa-4S0"/>
                     <connections>
                         <outlet property="locateUserButton" destination="3Hs-Gt-mkb" id="VZ7-SI-9Wd"/>
                         <outlet property="mainMapView" destination="mU4-X4-w5v" id="YJi-Hl-Epg"/>
