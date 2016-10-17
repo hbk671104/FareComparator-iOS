@@ -111,7 +111,7 @@ extension MapViewController: MAMapViewDelegate {
     }
     
     func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
-        if poiSearchRequest.city == nil, updatingLocation {
+        if poiSearchRequest.city.isEmpty, updatingLocation {
             mainMapView.resetUserLocation(userLocation: userLocation.location)
             // Regeocode
             let reGeoRequest = AMapReGeocodeSearchRequest().then { (request) in
