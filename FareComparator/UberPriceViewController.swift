@@ -8,6 +8,7 @@
 
 import UIKit
 import UberRides
+import DZNEmptyDataSet
 
 class UberPriceViewController: UIViewController {
 
@@ -82,6 +83,16 @@ extension UberPriceViewController : UITableViewDelegate, UITableViewDataSource {
 		let rideRequestViewController = RideRequestViewController(rideParameters: paramsBuilder.build(), loginManager: LoginManager())
 		rideRequestViewController.title = "优步叫车"
 		self.navigationController?.pushViewController(rideRequestViewController, animated: true)
+	}
+	
+}
+
+extension UberPriceViewController: DZNEmptyDataSetSource {
+	
+	// MARK: - DZNEmptyDataSetSource
+	
+	func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+		return R.image.confusedFace()
 	}
 	
 }

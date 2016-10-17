@@ -40,7 +40,7 @@
             </objects>
             <point key="canvasLocation" x="2597.5999999999999" y="138.98050974512745"/>
         </scene>
-        <!--Empty Data Set Delegate-->
+        <!--Empty Data Set Source-->
         <scene sceneID="MmB-MO-f9T">
             <objects>
                 <viewController storyboardIdentifier="POISearchResultViewController" id="TmT-S4-InB" customClass="POISearchResultViewController" customModule="FareComparator" customModuleProvider="target" sceneMemberID="viewController">
@@ -122,7 +122,6 @@
                                 <connections>
                                     <outlet property="dataSource" destination="TmT-S4-InB" id="8T2-JS-YoT"/>
                                     <outlet property="delegate" destination="TmT-S4-InB" id="vR7-dg-iVI"/>
-                                    <outlet property="emptyDataSetDelegate" destination="TmT-S4-InB" id="6wO-D9-grs"/>
                                     <outlet property="emptyDataSetSource" destination="TmT-S4-InB" id="MB5-QT-tC7"/>
                                 </connections>
                             </tableView>
@@ -202,24 +201,27 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--Uber Price View Controller-->
+        <!--Empty Data Set Source-->
         <scene sceneID="xqd-zV-GgG">
             <objects>
                 <viewController id="BKR-lz-FkW" customClass="UberPriceViewController" customModule="FareComparator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pbn-re-Xnf">
-                        <rect key="frame" x="0.0" y="0.0" width="188" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="187" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-tR-odG">
-                                <frame key="frameInset" width="188" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-tR-odG">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="98g-gg-dbu">
+                                    <rect key="frame" x="0.0" y="108" width="187" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideDetailCell" rowHeight="80" id="RHs-hD-QWL" customClass="RideDetailTableViewCell" customModule="FareComparator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="188" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="187" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RHs-hD-QWL" id="Nxn-2i-89U">
-                                            <frame key="frameInset" width="188" height="79"/>
+                                            <frame key="frameInset" width="187" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人民优步" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-uw-vga">
@@ -257,10 +259,17 @@
                                 <connections>
                                     <outlet property="dataSource" destination="BKR-lz-FkW" id="lXw-kk-6HA"/>
                                     <outlet property="delegate" destination="BKR-lz-FkW" id="sqQ-le-XPd"/>
+                                    <outlet property="emptyDataSetSource" destination="BKR-lz-FkW" id="yZH-4A-IK0"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ax6-tR-odG" firstAttribute="leading" secondItem="pbn-re-Xnf" secondAttribute="leading" id="K4H-GM-sWf"/>
+                            <constraint firstAttribute="trailing" secondItem="Ax6-tR-odG" secondAttribute="trailing" id="O2l-PJ-lO6"/>
+                            <constraint firstItem="Ax6-tR-odG" firstAttribute="top" secondItem="pbn-re-Xnf" secondAttribute="top" id="shg-Cx-HQ7"/>
+                            <constraint firstAttribute="bottom" secondItem="Ax6-tR-odG" secondAttribute="bottom" id="vNL-Z7-3Ig"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="uberTableView" destination="Ax6-tR-odG" id="sxt-XO-06m"/>
