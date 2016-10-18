@@ -42,8 +42,8 @@ struct R: Rswift.Validatable {
   
   /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
-    /// Image `BartLogo`.
-    static let bartLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "BartLogo")
+    /// Image `AppLogo`.
+    static let appLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "AppLogo")
     /// Image `ConfusedFace`.
     static let confusedFace = Rswift.ImageResource(bundle: R.hostingBundle, name: "ConfusedFace")
     /// Image `Locate`.
@@ -51,9 +51,9 @@ struct R: Rswift.Validatable {
     /// Image `LocationMarker`.
     static let locationMarker = Rswift.ImageResource(bundle: R.hostingBundle, name: "LocationMarker")
     
-    /// `UIImage(named: "BartLogo", bundle: ..., traitCollection: ...)`
-    static func bartLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.bartLogo, compatibleWith: traitCollection)
+    /// `UIImage(named: "AppLogo", bundle: ..., traitCollection: ...)`
+    static func appLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.appLogo, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ConfusedFace", bundle: ..., traitCollection: ...)`

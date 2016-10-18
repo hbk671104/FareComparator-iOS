@@ -77,7 +77,7 @@ class MapViewController: UIViewController {
 		
 		// Navigation item
 		let imageView = UIImageView(frame: CGRect(origin: CGPoint.zero, size:CGSize(width: 35, height: 35)))
-		imageView.image = R.image.bartLogo()
+		imageView.image = R.image.appLogo()
 		let barButtonItem = UIBarButtonItem(customView: imageView)
 		self.navigationItem.leftBarButtonItem = barButtonItem
     }

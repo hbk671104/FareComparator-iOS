@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BartLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lqS-Af-CH1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lqS-Af-CH1">
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lqS-Af-CH1" secondAttribute="height" multiplier="1:1" id="GLs-Ln-iED"/>
                                     <constraint firstAttribute="height" constant="80" id="TlO-le-f66"/>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BartLogo" width="60" height="60"/>
+        <image name="AppLogo" width="60" height="60"/>
     </resources>
 </document>
