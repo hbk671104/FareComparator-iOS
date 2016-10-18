@@ -9,6 +9,7 @@
 import UIKit
 import UberRides
 import Zhugeio
+import Siren
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
 		
+        // Check new version
+        Siren.sharedInstance.checkVersion(checkType: .immediately)
+        
 		// AMap Config
 		AMapServices.shared().apiKey = "1aa7c8d0f9dff2e0d30dc54228beab9a"
         
@@ -60,6 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func applicationDidBecomeActive(_ application: UIApplication) {
 		// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        Siren.sharedInstance.checkVersion(checkType: .daily)
 	}
 
 	func applicationWillTerminate(_ application: UIApplication) {

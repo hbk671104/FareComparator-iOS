@@ -19,6 +19,8 @@ target 'FareComparator' do
   pod 'MJRefresh'
   pod 'SwiftyJSON'
   pod 'Zhugeio'
+  pod 'Siren'
+  pod 'iRate'
 end
 
 post_install do |installer|
