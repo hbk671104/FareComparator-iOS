@@ -46,9 +46,12 @@ class UberPriceViewController: UIViewController {
             _ = paramsBuilder.setDropoffLocation(parentVC.userDropoffLocation)
             _ = paramsBuilder.setPickupLocation(parentVC.userPickupLocation)
             // Fetch price estimate
-            self.rideClient.fetchPriceEstimates(pickupLocation: parentVC.userPickupLocation, dropoffLocation: parentVC.userDropoffLocation, completion: { [weak self](priceEstimates, response) in
+            self.rideClient.fetchPriceEstimates(pickupLocation: parentVC.userPickupLocation, dropoffLocation: parentVC.userDropoffLocation, completion: { [weak self] (priceEstimates, response) in
                 if response.error == nil {
                     self?.uberPriceEstimate = priceEstimates
+					self?.uberPriceEstimate.sort(by: { (e1, e2) -> Bool in
+						return e1.lowEstimate < e2.lowEstimate
+					})
                     DispatchQueue.main.async {
                         self?.uberTableView.reloadData()
                     }
@@ -82,7 +85,7 @@ extension UberPriceViewController : UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let rideDetailCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.rideDetailCell, for: indexPath)!
-		rideDetailCell.priceEstimate = self.uberPriceEstimate[indexPath.row]
+		rideDetailCell.uberPriceEstimate = self.uberPriceEstimate[indexPath.row]
 		return rideDetailCell
 	}
 	

@@ -8,14 +8,36 @@
 
 import UIKit
 import UberRides
+import SwiftyJSON
 
 class RideDetailTableViewCell: UITableViewCell {
 
-	var priceEstimate: PriceEstimate? {
+	var uberPriceEstimate: PriceEstimate? {
 		didSet {
-			if let estimate = priceEstimate {
+			if let estimate = uberPriceEstimate {
 				rideTypeLabel.text = estimate.name
 				timeEstimateLabel.text = "\(estimate.estimate!)"
+			}
+		}
+	}
+	var didiPriceEstimate: JSON? {
+		didSet {
+			if let estimate = didiPriceEstimate {
+				var carType = ""
+				switch estimate["car_type"].intValue {
+				case 2:
+					carType = "滴滴舒适"
+				case 4:
+					carType = "滴滴豪华"
+				case 16:
+					carType = "滴滴商务"
+				case 64:
+					carType = "滴滴快车"
+				default:
+					break
+				}
+				rideTypeLabel.text = carType
+				timeEstimateLabel.text = "¥ \(estimate["estimate_price"].doubleValue / 100)"
 			}
 		}
 	}

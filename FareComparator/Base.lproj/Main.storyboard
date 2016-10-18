@@ -43,13 +43,7 @@
                             <constraint firstItem="tXX-Ip-jlP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="q61-Ih-N0M"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="滴步比价" id="sMM-3i-N0u">
-                        <barButtonItem key="rightBarButtonItem" title="滴滴一下" id="NAA-zh-qNw">
-                            <connections>
-                                <action selector="openDidi:" destination="BYZ-38-t0r" id="Rqg-KC-kVe"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="滴步比价" id="sMM-3i-N0u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +73,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JRQ-0K-zAH" id="rSj-w3-cpj">
-                                            <frame key="frameInset" width="375" height="79"/>
+                                            <frame key="frameInset" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationMarker" translatesAutoresizingMaskIntoConstraints="NO" id="HBW-yS-VoZ">
@@ -283,22 +277,22 @@
                         <viewControllerLayoutGuide type="bottom" id="lzV-jC-F0N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pbn-re-Xnf">
-                        <rect key="frame" x="0.0" y="0.0" width="187" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-tR-odG">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="98g-gg-dbu">
-                                    <rect key="frame" x="0.0" y="128" width="187" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="128" width="188" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideDetailCell" rowHeight="100" id="RHs-hD-QWL" customClass="RideDetailTableViewCell" customModule="FareComparator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="187" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="188" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RHs-hD-QWL" id="Nxn-2i-89U">
-                                            <frame key="frameInset" width="187" height="99"/>
+                                            <frame key="frameInset" width="188" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人民优步" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-uw-vga">
@@ -356,12 +350,16 @@
             </objects>
             <point key="canvasLocation" x="3393" y="-170"/>
         </scene>
-        <!--Didi Price View Controller-->
+        <!--Empty Data Set Source-->
         <scene sceneID="gM8-Vw-Bva">
             <objects>
                 <viewController id="zSt-bZ-enl" customClass="DidiPriceViewController" customModule="FareComparator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j4M-Er-71d"/>
+                        <viewControllerLayoutGuide type="bottom" id="PhG-bK-rUE"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fN9-1K-bFN">
-                        <rect key="frame" x="0.0" y="0.0" width="188" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iMt-Q4-6q8">
@@ -373,7 +371,7 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideDetailCell" rowHeight="100" id="AxE-Wj-8nl" customClass="RideDetailTableViewCell" customModule="FareComparator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="188" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="187" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AxE-Wj-8nl" id="Xvc-dM-gDB">
                                             <frame key="frameInset" width="188" height="99"/>
@@ -411,6 +409,11 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zSt-bZ-enl" id="qew-y1-fXi"/>
+                                    <outlet property="delegate" destination="zSt-bZ-enl" id="WX6-5w-LAw"/>
+                                    <outlet property="emptyDataSetSource" destination="zSt-bZ-enl" id="8WJ-4j-r4b"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -421,6 +424,9 @@
                             <constraint firstAttribute="trailing" secondItem="iMt-Q4-6q8" secondAttribute="trailing" id="NgX-Vw-lTW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="didiTableView" destination="iMt-Q4-6q8" id="h7l-nY-P4A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sX4-D4-UOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
