@@ -50,6 +50,7 @@ class DidiPriceViewController: UIViewController {
 			let total = 4
 			var count = total
 			var tempEstimate: [JSON] = []
+			var tempCarTypePool: [Int] = []
 			for i in 1...total {
 				priceQueryParams["biz"] = "\(i)"
 				DIOpenSDK.asyncCallOpenAPI("getEstimatePrice", params: priceQueryParams, resultBlock: { [weak self] (error, baseModel) in
@@ -57,7 +58,10 @@ class DidiPriceViewController: UIViewController {
 						if let array = baseModel?.data["price"] as? NSArray {
 							for price in array {
 								let json = JSON(price)
-								tempEstimate.append(json)
+								if !tempCarTypePool.contains(json["car_type"].intValue) {
+									tempCarTypePool.append(json["car_type"].intValue)
+									tempEstimate.append(json)
+								}
 							}
 						}
 					} else {

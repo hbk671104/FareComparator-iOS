@@ -4,7 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,17 +29,26 @@
                                     <segue destination="zSt-bZ-enl" kind="embed" id="4b3-Lj-Gkz"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLy-EM-wSM">
+                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="GPc-uo-B5U"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vLy-EM-wSM" secondAttribute="bottom" id="16J-fu-u0y"/>
+                            <constraint firstItem="wFR-ON-61Q" firstAttribute="leading" secondItem="vLy-EM-wSM" secondAttribute="trailing" id="DL3-LG-Tlp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tXX-Ip-jlP" secondAttribute="bottom" id="RFI-J0-Jrq"/>
+                            <constraint firstItem="vLy-EM-wSM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SEc-xh-egk"/>
+                            <constraint firstItem="vLy-EM-wSM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VrN-8v-QI1"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wFR-ON-61Q" secondAttribute="bottom" id="WYf-5l-cW2"/>
                             <constraint firstAttribute="trailing" secondItem="wFR-ON-61Q" secondAttribute="trailing" id="Z2z-T2-vno"/>
-                            <constraint firstItem="wFR-ON-61Q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="ZTo-sZ-hxX"/>
                             <constraint firstItem="tXX-Ip-jlP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="i9c-fZ-QT8"/>
+                            <constraint firstItem="vLy-EM-wSM" firstAttribute="leading" secondItem="tXX-Ip-jlP" secondAttribute="trailing" id="lij-aA-pMV"/>
                             <constraint firstItem="tXX-Ip-jlP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nfU-mD-QJt"/>
                             <constraint firstItem="wFR-ON-61Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pCg-bZ-Kgf"/>
-                            <constraint firstItem="tXX-Ip-jlP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="q61-Ih-N0M"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="滴步比价" id="sMM-3i-N0u"/>
@@ -73,7 +81,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JRQ-0K-zAH" id="rSj-w3-cpj">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationMarker" translatesAutoresizingMaskIntoConstraints="NO" id="HBW-yS-VoZ">
@@ -277,22 +285,23 @@
                         <viewControllerLayoutGuide type="bottom" id="lzV-jC-F0N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pbn-re-Xnf">
-                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="187" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-tR-odG">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="98g-gg-dbu">
-                                    <rect key="frame" x="0.0" y="128" width="188" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="128" width="187" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideDetailCell" rowHeight="100" id="RHs-hD-QWL" customClass="RideDetailTableViewCell" customModule="FareComparator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="188" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="187" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RHs-hD-QWL" id="Nxn-2i-89U">
-                                            <frame key="frameInset" width="188" height="99"/>
+                                            <frame key="frameInset" width="187" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人民优步" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-uw-vga">
@@ -359,13 +368,14 @@
                         <viewControllerLayoutGuide type="bottom" id="PhG-bK-rUE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fN9-1K-bFN">
-                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="187" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iMt-Q4-6q8">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="jLr-1c-1H3">
-                                    <rect key="frame" x="0.0" y="128" width="188" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="128" width="187" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
@@ -374,7 +384,7 @@
                                         <rect key="frame" x="0.0" y="28" width="187" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AxE-Wj-8nl" id="Xvc-dM-gDB">
-                                            <frame key="frameInset" width="188" height="99"/>
+                                            <frame key="frameInset" width="187" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滴滴快车" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgA-gC-qvM">
