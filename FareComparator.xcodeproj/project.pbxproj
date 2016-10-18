@@ -44,6 +44,7 @@
 		406D8FC41DB0F57D00B685DC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		406DD7231DB33B3D00AC8A31 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		4072D3D81DB4C13C007B5615 /* UberPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UberPriceViewController.swift; sourceTree = "<group>"; };
+		407BC1CA1DB62D4000198A33 /* Beijing, China.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Beijing, China.gpx"; sourceTree = "<group>"; };
 		407F6E121DB0E73400936C18 /* MessageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageUtil.swift; sourceTree = "<group>"; };
 		4084A6821DB2155A00B04B85 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4084A6841DB22B9D00B04B85 /* POISearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POISearchResultViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +147,7 @@
 			children = (
 				407F6E121DB0E73400936C18 /* MessageUtil.swift */,
 				4084A6821DB2155A00B04B85 /* Extensions.swift */,
+				407BC1CA1DB62D4000198A33 /* Beijing, China.gpx */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
