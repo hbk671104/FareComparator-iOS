@@ -25,13 +25,22 @@
                                     <segue destination="BKR-lz-FkW" kind="embed" identifier="uberPriceEmbed" id="kEN-zK-BA6"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXX-Ip-jlP">
+                                <connections>
+                                    <segue destination="zSt-bZ-enl" kind="embed" id="4b3-Lj-Gkz"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tXX-Ip-jlP" secondAttribute="bottom" id="RFI-J0-Jrq"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wFR-ON-61Q" secondAttribute="bottom" id="WYf-5l-cW2"/>
                             <constraint firstAttribute="trailing" secondItem="wFR-ON-61Q" secondAttribute="trailing" id="Z2z-T2-vno"/>
                             <constraint firstItem="wFR-ON-61Q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="ZTo-sZ-hxX"/>
+                            <constraint firstItem="tXX-Ip-jlP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="i9c-fZ-QT8"/>
+                            <constraint firstItem="tXX-Ip-jlP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nfU-mD-QJt"/>
                             <constraint firstItem="wFR-ON-61Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pCg-bZ-Kgf"/>
+                            <constraint firstItem="tXX-Ip-jlP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="q61-Ih-N0M"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="滴步比价" id="sMM-3i-N0u"/>
@@ -268,22 +277,22 @@
                         <viewControllerLayoutGuide type="bottom" id="lzV-jC-F0N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pbn-re-Xnf">
-                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="187" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-tR-odG">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="98g-gg-dbu">
-                                    <rect key="frame" x="0.0" y="128" width="1000" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="128" width="187" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideDetailCell" rowHeight="100" id="RHs-hD-QWL" customClass="RideDetailTableViewCell" customModule="FareComparator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="187" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RHs-hD-QWL" id="Nxn-2i-89U">
-                                            <frame key="frameInset" width="1000" height="99"/>
+                                            <frame key="frameInset" width="187" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人民优步" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-uw-vga">
@@ -339,7 +348,77 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ip3-43-Uoh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3394.8000000000002" y="-143.47826086956522"/>
+            <point key="canvasLocation" x="3393" y="-170"/>
+        </scene>
+        <!--Didi Price View Controller-->
+        <scene sceneID="gM8-Vw-Bva">
+            <objects>
+                <viewController id="zSt-bZ-enl" customClass="DidiPriceViewController" customModule="FareComparator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fN9-1K-bFN">
+                        <rect key="frame" x="0.0" y="0.0" width="188" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iMt-Q4-6q8">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="jLr-1c-1H3">
+                                    <rect key="frame" x="0.0" y="128" width="188" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideDetailCell" rowHeight="100" id="AxE-Wj-8nl" customClass="RideDetailTableViewCell" customModule="FareComparator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="188" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AxE-Wj-8nl" id="Xvc-dM-gDB">
+                                            <frame key="frameInset" width="188" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滴滴快车" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgA-gC-qvM">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Dm3-Mn-tcv"/>
+                                                        <constraint firstAttribute="height" constant="34" id="WA7-hf-g3r"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjS-8h-Q9Q">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="KZf-aD-bb8"/>
+                                                        <constraint firstAttribute="height" constant="21" id="VUR-gw-EQq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xgA-gC-qvM" firstAttribute="top" secondItem="Xvc-dM-gDB" secondAttribute="topMargin" constant="12" id="EXg-1B-GGp"/>
+                                                <constraint firstItem="EjS-8h-Q9Q" firstAttribute="centerX" secondItem="xgA-gC-qvM" secondAttribute="centerX" id="K7V-0k-weJ"/>
+                                                <constraint firstItem="xgA-gC-qvM" firstAttribute="centerX" secondItem="Xvc-dM-gDB" secondAttribute="centerX" id="ZC0-NU-Mhm"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EjS-8h-Q9Q" secondAttribute="bottom" constant="12" id="qdQ-g8-pNj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="rideTypeLabel" destination="xgA-gC-qvM" id="Fjt-1S-svB"/>
+                                            <outlet property="timeEstimateLabel" destination="EjS-8h-Q9Q" id="3QQ-5R-Vnr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iMt-Q4-6q8" firstAttribute="leading" secondItem="fN9-1K-bFN" secondAttribute="leading" id="6tf-Bo-94e"/>
+                            <constraint firstItem="iMt-Q4-6q8" firstAttribute="top" secondItem="fN9-1K-bFN" secondAttribute="top" id="Ggq-QH-M6l"/>
+                            <constraint firstAttribute="bottom" secondItem="iMt-Q4-6q8" secondAttribute="bottom" id="KB2-aO-64p"/>
+                            <constraint firstAttribute="trailing" secondItem="iMt-Q4-6q8" secondAttribute="trailing" id="NgX-Vw-lTW"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sX4-D4-UOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3394" y="467"/>
         </scene>
     </scenes>
     <resources>

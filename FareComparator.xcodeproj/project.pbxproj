@@ -14,6 +14,7 @@
 		4016D0551DAE1ABB00858136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4016D0531DAE1ABB00858136 /* LaunchScreen.storyboard */; };
 		401BA84A1DB5BDAC004F5843 /* DIOpenSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 401BA8481DB5BDAC004F5843 /* DIOpenSDK.bundle */; };
 		401BA84B1DB5BDAC004F5843 /* DIOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401BA8491DB5BDAC004F5843 /* DIOpenSDK.framework */; };
+		401BA84D1DB5C16B004F5843 /* DidiPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401BA84C1DB5C16B004F5843 /* DidiPriceViewController.swift */; };
 		403329B71DB0C97000F46E61 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403329B61DB0C97000F46E61 /* R.generated.swift */; };
 		403329BD1DB0CDE100F46E61 /* RideDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403329BC1DB0CDE100F46E61 /* RideDetailTableViewCell.swift */; };
 		406D8FC51DB0F57D00B685DC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D8FC41DB0F57D00B685DC /* MapViewController.swift */; };
@@ -36,6 +37,7 @@
 		4016D0561DAE1ABB00858136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		401BA8481DB5BDAC004F5843 /* DIOpenSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DIOpenSDK.bundle; sourceTree = "<group>"; };
 		401BA8491DB5BDAC004F5843 /* DIOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DIOpenSDK.framework; sourceTree = "<group>"; };
+		401BA84C1DB5C16B004F5843 /* DidiPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DidiPriceViewController.swift; sourceTree = "<group>"; };
 		403329B61DB0C97000F46E61 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		403329BC1DB0CDE100F46E61 /* RideDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideDetailTableViewCell.swift; sourceTree = "<group>"; };
 		406D8FC11DB0F3CC00B685DC /* FareComparator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FareComparator-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				406D8FC41DB0F57D00B685DC /* MapViewController.swift */,
 				4084A6841DB22B9D00B04B85 /* POISearchResultViewController.swift */,
 				4016D04C1DAE1ABB00858136 /* PriceCompareViewController.swift */,
+				401BA84C1DB5C16B004F5843 /* DidiPriceViewController.swift */,
 				4072D3D81DB4C13C007B5615 /* UberPriceViewController.swift */,
 			);
 			name = Controller;
@@ -304,6 +307,7 @@
 				4084A6831DB2155A00B04B85 /* Extensions.swift in Sources */,
 				407F6E131DB0E73400936C18 /* MessageUtil.swift in Sources */,
 				4016D04B1DAE1ABB00858136 /* AppDelegate.swift in Sources */,
+				401BA84D1DB5C16B004F5843 /* DidiPriceViewController.swift in Sources */,
 				403329BD1DB0CDE100F46E61 /* RideDetailTableViewCell.swift in Sources */,
 				4084A6871DB23E2E00B04B85 /* POITableViewCell.swift in Sources */,
 				403329B71DB0C97000F46E61 /* R.generated.swift in Sources */,

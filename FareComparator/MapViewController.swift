@@ -43,7 +43,7 @@ class MapViewController: UIViewController {
                 mainMapView.showAnnotations(mainMapView.annotations, animated: true)
                 comparePriceButton.isEnabled = true
                 comparePriceButton.delay = 1.0
-                comparePriceButton.pop(repeatCount: 2)
+                comparePriceButton.pop(repeatCount: 1)
             }
         }
     }
