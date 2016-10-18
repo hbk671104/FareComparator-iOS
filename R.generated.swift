@@ -182,7 +182,7 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
       
       static func validate() throws {
-        if UIKit.UIImage(named: "BartLogo") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'BartLogo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "AppLogo") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AppLogo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
       }
       
       fileprivate init() {}
