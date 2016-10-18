@@ -34,8 +34,8 @@ extension PriceCompareViewController: DIOpenSDKDelegate {
 	// MARK: - DIOpenSDKDelegate 
 	
 	func diopensdkTopNavigationTheme() -> DITopNavigationTheme! {
-		let theme = DITopNavigationTheme()
-		theme.backgroundColor = UIColor.flatYellow
-		return theme
+		return DITopNavigationTheme().then { (theme) in
+			theme.backgroundColor = UIColor.flatYellow
+		}
 	}
 }
