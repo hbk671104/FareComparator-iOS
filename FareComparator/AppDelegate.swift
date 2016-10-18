@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 		// Uber Config
 		Configuration.setRegion(.china)
-		Configuration.setSandboxEnabled(true)
+		Configuration.setSandboxEnabled(false)
 		Configuration.setFallbackEnabled(false)
 		
 		// Didi Config
