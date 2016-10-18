@@ -36,6 +36,9 @@
 		<string>uber</string>
 		<string>uberauth</string>
 		<string>iosamap</string>
+		<string>didipasnger</string>
+		<string>alipay</string>
+		<string>weixin</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
