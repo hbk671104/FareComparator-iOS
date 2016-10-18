@@ -18,6 +18,7 @@ target 'FareComparator' do
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git', :branch => 'swift3-readme'
   pod 'MJRefresh'
   pod 'SwiftyJSON'
+  pod 'Zhugeio'
 end
 
 post_install do |installer|

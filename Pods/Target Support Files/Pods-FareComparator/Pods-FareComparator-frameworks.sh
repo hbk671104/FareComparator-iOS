@@ -95,6 +95,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Then/Then.framework"
   install_framework "$BUILT_PRODUCTS_DIR/UberRides/UberRides.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Zhugeio/Zhugeio.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ChameleonFramework/ChameleonFramework.framework"
@@ -108,4 +109,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Then/Then.framework"
   install_framework "$BUILT_PRODUCTS_DIR/UberRides/UberRides.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Zhugeio/Zhugeio.framework"
 fi

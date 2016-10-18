@@ -17,9 +17,12 @@ PODS:
   - RevealingSplashView (0.0.9)
   - SwiftMessages (3.0.1)
   - SwiftyJSON (3.1.1)
-  - Then (2.0.0)
+  - Then (2.1.0)
   - UberRides (0.5.2):
     - ObjectMapper (~> 2.0)
+  - Zhugeio (2.0.6):
+    - Zhugeio/Zhugeio (= 2.0.6)
+  - Zhugeio/Zhugeio (2.0.6)
 
 DEPENDENCIES:
   - AMap3DMap
@@ -34,6 +37,7 @@ DEPENDENCIES:
   - SwiftyJSON
   - Then
   - UberRides (from `https://github.com/long/rides-ios-sdk.git`, branch `swift-3-dev`)
+  - Zhugeio
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -65,9 +69,10 @@ SPEC CHECKSUMS:
   RevealingSplashView: 80b880b8eb014ea01fa0d15a9da26ba40d31a714
   SwiftMessages: 945e2928c6e819776abc8f480eb288c42cdd9e5b
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
-  Then: 460074ffe907de3536d5e88f189dac5ef7cf0869
+  Then: 8496793c8fcac95482b943909b440724c7d8d82c
   UberRides: 96eb232374a6e8e616c20fdba83c2643a6ad08dc
+  Zhugeio: 0db34ba66ee32594662df0abdc57cd863cf105b0
 
-PODFILE CHECKSUM: 1a638156a963e952e663074765418839cc0220f9
+PODFILE CHECKSUM: 48ac65c078dc865deef37586412fa7a089116ca0
 
 COCOAPODS: 1.0.1

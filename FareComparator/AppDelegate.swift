@@ -8,6 +8,7 @@
 
 import UIKit
 import UberRides
+import Zhugeio
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Didi Config
 		DIOpenSDK.registerApp("didi49694F49616E392B676D75715451", secret: "68c9ca942789448e279b7944547cf394")
 		
+        // ZhuGe Config
+        Zhuge.sharedInstance().start(withAppKey: "b619a0a06ddc45208d725d45086ec6d2", launchOptions: launchOptions)
+        
 		// Handle incoming SSO Requests
 		_ = RidesAppDelegate.sharedInstance.application(application, didFinishLaunchingWithOptions: launchOptions)
 		
