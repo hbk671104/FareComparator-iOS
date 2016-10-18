@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		Configuration.setSandboxEnabled(true)
 		Configuration.setFallbackEnabled(false)
 		
+		// Didi Config
+		DIOpenSDK.registerApp("lalala", secret: "lalal")
+		
 		// Handle incoming SSO Requests
 		_ = RidesAppDelegate.sharedInstance.application(application, didFinishLaunchingWithOptions: launchOptions)
 		

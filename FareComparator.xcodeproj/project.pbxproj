@@ -12,6 +12,8 @@
 		4016D0501DAE1ABB00858136 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4016D04E1DAE1ABB00858136 /* Main.storyboard */; };
 		4016D0521DAE1ABB00858136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4016D0511DAE1ABB00858136 /* Assets.xcassets */; };
 		4016D0551DAE1ABB00858136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4016D0531DAE1ABB00858136 /* LaunchScreen.storyboard */; };
+		401BA84A1DB5BDAC004F5843 /* DIOpenSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 401BA8481DB5BDAC004F5843 /* DIOpenSDK.bundle */; };
+		401BA84B1DB5BDAC004F5843 /* DIOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401BA8491DB5BDAC004F5843 /* DIOpenSDK.framework */; };
 		403329B71DB0C97000F46E61 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403329B61DB0C97000F46E61 /* R.generated.swift */; };
 		403329BD1DB0CDE100F46E61 /* RideDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403329BC1DB0CDE100F46E61 /* RideDetailTableViewCell.swift */; };
 		406D8FC51DB0F57D00B685DC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D8FC41DB0F57D00B685DC /* MapViewController.swift */; };
@@ -32,6 +34,8 @@
 		4016D0511DAE1ABB00858136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4016D0541DAE1ABB00858136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4016D0561DAE1ABB00858136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		401BA8481DB5BDAC004F5843 /* DIOpenSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DIOpenSDK.bundle; sourceTree = "<group>"; };
+		401BA8491DB5BDAC004F5843 /* DIOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DIOpenSDK.framework; sourceTree = "<group>"; };
 		403329B61DB0C97000F46E61 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		403329BC1DB0CDE100F46E61 /* RideDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideDetailTableViewCell.swift; sourceTree = "<group>"; };
 		406D8FC11DB0F3CC00B685DC /* FareComparator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FareComparator-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401BA84B1DB5BDAC004F5843 /* DIOpenSDK.framework in Frameworks */,
 				C4F7B38937A537EA44703B1C /* Pods_FareComparator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,6 +67,8 @@
 		13CED954B8CF9E9AFE952683 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				401BA8481DB5BDAC004F5843 /* DIOpenSDK.bundle */,
+				401BA8491DB5BDAC004F5843 /* DIOpenSDK.framework */,
 				403329B61DB0C97000F46E61 /* R.generated.swift */,
 				B1DC73743D9D1485471B8192 /* Pods_FareComparator.framework */,
 			);
@@ -215,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4016D0551DAE1ABB00858136 /* LaunchScreen.storyboard in Resources */,
+				401BA84A1DB5BDAC004F5843 /* DIOpenSDK.bundle in Resources */,
 				4016D0521DAE1ABB00858136 /* Assets.xcassets in Resources */,
 				4016D0501DAE1ABB00858136 /* Main.storyboard in Resources */,
 			);
@@ -426,6 +434,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TCXFX6H5P2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FareComparator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -446,6 +458,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TCXFX6H5P2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FareComparator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
