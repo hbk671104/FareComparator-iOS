@@ -24,4 +24,18 @@ class PriceCompareViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 	
+	@IBAction func openDidi(_ sender: AnyObject) {
+		DIOpenSDK.showDDPage(self, animated: true, params: nil, delegate: self)
+	}
+}
+
+extension PriceCompareViewController: DIOpenSDKDelegate {
+
+	// MARK: - DIOpenSDKDelegate 
+	
+	func diopensdkTopNavigationTheme() -> DITopNavigationTheme! {
+		let theme = DITopNavigationTheme()
+		theme.backgroundColor = UIColor.flatYellow
+		return theme
+	}
 }
