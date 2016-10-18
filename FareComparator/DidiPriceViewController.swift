@@ -120,13 +120,17 @@ extension DidiPriceViewController : UITableViewDelegate, UITableViewDataSource {
 	
 	// MARK: - UITableViewDelegate
 	
-//	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//		let priceEstimate = self.uberPriceEstimate[indexPath.row]
-//		_ = paramsBuilder.setProductID(priceEstimate.productID!)
-//		let rideRequestViewController = RideRequestViewController(rideParameters: paramsBuilder.build(), loginManager: LoginManager())
-//		rideRequestViewController.title = "优步叫车"
-//		self.navigationController?.pushViewController(rideRequestViewController, animated: true)
-//	}
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let carType = self.didiPriceEstimate[indexPath.row]["car_type"].intValue
+		DIOpenSDK.showDDPage(self, animated: true, params: DIOpenSDKRegisterOptions().then({ (option) in
+			option.fromlat = self.priceQueryParams["fromlat"]
+			option.fromlng = self.priceQueryParams["fromlng"]
+			option.tolat = self.priceQueryParams["tolat"]
+			option.tolng = self.priceQueryParams["tolng"]
+			option.maptype = self.priceQueryParams["maptype"]
+			option.biz = carType == 64 ? "3" : "2"
+		}), delegate: self)
+	}
 	
 }
 
