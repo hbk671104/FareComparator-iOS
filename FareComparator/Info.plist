@@ -49,6 +49,8 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>滴步比价需要获取您的当前位置，以便计算车费与接驾时间</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>滴步比价需要读取您的相册，以便提供更优质的体验</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
