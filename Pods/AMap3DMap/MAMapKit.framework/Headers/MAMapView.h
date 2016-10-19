@@ -192,8 +192,18 @@ extern NSString * const kMAMapLayerCameraDegreeKey;
  */
 - (MACoordinateRegion)convertRect:(CGRect)rect toRegionFromView:(UIView *)view;
 
-#pragma mark - mapView control
+#pragma mark - Limitation
+/*!
+ @brief 设置可见地图区域的矩形边界，如限制地图只显示北京市范围. 
+ */
+@property (nonatomic, assign) MACoordinateRegion limitRegion;
 
+/*!
+ @brief 设置可见地图区域的矩形边界，如限制地图只显示北京市范围.
+ */
+@property (nonatomic, assign) MAMapRect limitMapRect;
+
+#pragma mark - mapView control
 /**
  * @brief 当前地图的中心点，改变该值时，地图的比例尺级别不会发生变化
  */

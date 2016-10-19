@@ -66,10 +66,10 @@ open class RevealingSplashView: UIView, SplashAnimatable{
     /// THe image view containing the icon Image
     open var imageView: UIImageView?
     
-    /// The type of animation to use for the. Defaults to the Twitter default animation
-    open var animationType: SplashAnimationType = SplashAnimationType.Twitter
+    /// The type of animation to use for the. Defaults to the twitter default animation
+    open var animationType: SplashAnimationType = SplashAnimationType.twitter
     
-    /// The duration of the animation, default to 1.5 seconds. In the case of HeartBeat animation recommended value is 3
+    /// The duration of the animation, default to 1.5 seconds. In the case of heartBeat animation recommended value is 3
     open var duration: Double = 1.5
     
     /// The delay of the animation, default to 0.5 seconds
@@ -77,6 +77,9 @@ open class RevealingSplashView: UIView, SplashAnimatable{
     
     /// The boolean to stop the heart beat animation, default to false (continuous beat)
     open var heartAttack: Bool = false
+    
+    /// The repeat counter for heart beat animation, default to 1
+    open var minimumBeats: Int = 1
     
     /**
      Default constructor of the class

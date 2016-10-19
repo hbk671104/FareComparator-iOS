@@ -8,7 +8,7 @@
 
 #import "MAAnnotationView.h"
 
-typedef NS_ENUM(NSUInteger, MAPinAnnotationColor){
+typedef NS_ENUM(NSInteger, MAPinAnnotationColor){
     MAPinAnnotationColorRed = 0,    //!< 红色大头针
     MAPinAnnotationColorGreen,      //!< 绿色大头针
     MAPinAnnotationColorPurple      //!< 紫色大头针

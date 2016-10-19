@@ -24,6 +24,9 @@ Get `RevealingSplashView` on CocoaPods, just add `pod 'RevealingSplashView'` to 
 
 If you use `Carthage` you can just install it by adding `github "PiXeL16/RevealingSplashView"` to your `Carthage` file.
 
+### Using Swift 2.3?
+If you are using Swift 2.3, please use the `0.0.6` release.
+
 :metal: Usage
 ---
 Usage is pretty easy, just initialize your `RevealingSplashView` in your entry `ViewController` and in your `viewDidLoad()` function add it to your view. Then call `startAnimation()`:
@@ -35,7 +38,7 @@ override func viewDidLoad() {
         super.viewDidLoad()
 
         //Initialize a revealing Splash with with the iconImage, the initial size and the background color
-        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!,iconInitialSize: CGSizeMake(70, 70), backgroundColor: UIColor(rgba:"#1D8FF1"))
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!,iconInitialSize: CGSize(width: 70, height: 70), backgroundColor: UIColor(red:0.11, green:0.56, blue:0.95, alpha:1.0))
 
         //Adds the revealing splash view as a sub view
         self.view.addSubview(revealingSplashView)
@@ -60,12 +63,12 @@ import RevealingSplashView
 
 override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //Initialize a revealing Splash with with the iconImage, the initial size and the background color
-        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!,iconInitialSize: CGSizeMake(70, 70), backgroundColor: UIColor(rgba:"#1D8FF1"))
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!,iconInitialSize: CGSize(width: 70, height: 70), backgroundColor: UIColor(red:0.11, green:0.56, blue:0.95, alpha:1.0))
 
         revealingSplashView.useCustomIconColor = true
-        revealingSplashView.iconColor = UIColor.redColor
+        revealingSplashView.iconColor = UIColor.red
 
         //Adds the revealing splash view as a sub view
         self.view.addSubview(revealingSplashView)
@@ -114,7 +117,7 @@ Similar to the `Twitter` one but rotating while zooming out.
 
 ```swift
 
-revealingSplashView.animationType = SplashAnimationType.RotateOut
+revealingSplashView.animationType = SplashAnimationType.rotateOut
 ```
 ![RotateOutAnimation](/Web/rotateAndZoomOut.gif)
 
@@ -124,7 +127,7 @@ Pop the view a couple of times and zoom out.
 
 ```swift
 
-revealingSplashView.animationType = SplashAnimationType.PopAndZoomOut
+revealingSplashView.animationType = SplashAnimationType.popAndZoomOut
 ```
 ![RotateOutAnimation](/Web/popAndZoomOut.gif)
 
@@ -134,7 +137,7 @@ Squeeze the view and zoom out.
 
 ```swift
 
-revealingSplashView.animationType = SplashAnimationType.SqueezeAndZoomOut
+revealingSplashView.animationType = SplashAnimationType.squeezeAndZoomOut
 ```
 ![RotateOutAnimation](/Web/squeezeAndZoomOut.gif)
 
@@ -144,7 +147,7 @@ Swings the view and zoom out.
 
 ```swift
 
-revealingSplashView.animationType = SplashAnimationType.SwingAndZoomOut
+revealingSplashView.animationType = SplashAnimationType.swingAndZoomOut
 ```
 ![RotateOutAnimation](/Web/swingAndZoomOut.gif)
 
@@ -154,7 +157,7 @@ Wobbles the view and zoom out.
 
 ```swift
 
-revealingSplashView.animationType = SplashAnimationType.WobbleAndZoomOut
+revealingSplashView.animationType = SplashAnimationType.wobbleAndZoomOut
 ```
 ![RotateOutAnimation](/Web/wobbleAndZoomOut.gif)
 
