@@ -17,7 +17,7 @@ PODS:
   - R.swift.Library (3.0.2)
   - RevealingSplashView (0.1.0)
   - Siren (1.0.2)
-  - SwiftMessages (3.0.1)
+  - SwiftMessages (3.0.2)
   - SwiftyJSON (3.1.1)
   - Then (2.1.0)
   - UberRides (0.5.2):
@@ -73,7 +73,7 @@ SPEC CHECKSUMS:
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   RevealingSplashView: 501dd03d975ba2c4165dd463ea1c7c407fb9d13e
   Siren: c21bad8c931d32f9cefd6511a42913b0195329fc
-  SwiftMessages: 945e2928c6e819776abc8f480eb288c42cdd9e5b
+  SwiftMessages: 3523c331c6b7b66e6f23a970ced259065ba31f9c
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
   Then: 8496793c8fcac95482b943909b440724c7d8d82c
   UberRides: 96eb232374a6e8e616c20fdba83c2643a6ad08dc
