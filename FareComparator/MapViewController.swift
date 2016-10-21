@@ -66,6 +66,7 @@ class MapViewController: UIViewController {
 		mainMapView.showsScale = true
 		mainMapView.showsCompass = true
         mainMapView.showsUserLocation = true
+		mainMapView.isShowTraffic = true
         mainMapView.setUserTrackingMode(.follow, animated: true)
         mainMapView.delegate = self
         
