@@ -94,22 +94,21 @@ public final class Mapper<N: BaseMappable> {
 	public func map(JSON: [String: Any]) -> N? {
 		let map = Map(mappingType: .fromJSON, JSON: JSON, context: context)
 		
-		// check if object is StaticMappable
-		if let klass = N.self as? StaticMappable.Type {
+		if let klass = N.self as? StaticMappable.Type { // Check if object is StaticMappable
 			if var object = klass.objectForMapping(map: map) as? N {
 				object.mapping(map: map)
 				return object
 			}
-		}
-
-		// fall back to using init? to create N
-		if let klass = N.self as? Mappable.Type {
+		} else if let klass = N.self as? Mappable.Type { // Check if object is Mappable
 			if var object = klass.init(map: map) as? N {
 				object.mapping(map: map)
 				return object
 			}
+		} else {
+			// Ensure BaseMappable is not implemented directly
+			assert(false, "BaseMappable should not be implemented directly. Please implement Mappable, StaticMappable or ImmutableMappable")
 		}
-
+		
 		return nil
 	}
 
@@ -163,7 +162,7 @@ public final class Mapper<N: BaseMappable> {
 		return nil
 	}
 
-	/// Maps a JSON dictionary of dictionaries to a dictionary of Mappble objects
+	/// Maps a JSON dictionary of dictionaries to a dictionary of Mappable objects
 	public func mapDictionary(JSON: [String: [String: Any]]) -> [String: N]? {
 		// map every value in dictionary to type N
 		let result = JSON.filterMap(map)
@@ -183,7 +182,7 @@ public final class Mapper<N: BaseMappable> {
 		return dictionary
 	}
 	
-    /// Maps a JSON dictionary of dictionaries to an existing dictionary of Mappble objects
+    /// Maps a JSON dictionary of dictionaries to an existing dictionary of Mappable objects
     public func mapDictionary(JSON: [String: [String: Any]], toDictionary dictionary: [String: N]) -> [String: N] {
 		var mutableDictionary = dictionary
         for (key, value) in JSON {
@@ -393,22 +392,22 @@ extension Mapper where N: Hashable {
 }
 
 extension Dictionary {
-	internal func map<K: Hashable, V>(_ f: (Element) -> (K, V)) -> [K: V] {
+	internal func map<K: Hashable, V>(_ f: (Element) throws -> (K, V)) rethrows -> [K: V] {
 		var mapped = [K: V]()
 
 		for element in self {
-			let newElement = f(element)
+			let newElement = try f(element)
 			mapped[newElement.0] = newElement.1
 		}
 
 		return mapped
 	}
 
-	internal func map<K: Hashable, V>(_ f: (Element) -> (K, [V])) -> [K: [V]] {
+	internal func map<K: Hashable, V>(_ f: (Element) throws -> (K, [V])) rethrows -> [K: [V]] {
 		var mapped = [K: [V]]()
 		
 		for element in self {
-			let newElement = f(element)
+			let newElement = try f(element)
 			mapped[newElement.0] = newElement.1
 		}
 		
@@ -416,11 +415,11 @@ extension Dictionary {
 	}
 
 	
-	internal func filterMap<U>(_ f: (Value) -> U?) -> [Key: U] {
+	internal func filterMap<U>(_ f: (Value) throws -> U?) rethrows -> [Key: U] {
 		var mapped = [Key: U]()
 
 		for (key, value) in self {
-			if let newValue = f(value) {
+			if let newValue = try f(value) {
 				mapped[key] = newValue
 			}
 		}
