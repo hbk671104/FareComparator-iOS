@@ -15,7 +15,7 @@ target 'FareComparator' do
   pod 'Then'
   pod 'DZNEmptyDataSet'
   pod 'RevealingSplashView'
-  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git', :branch => 'swift3-readme'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'MJRefresh'
   pod 'SwiftyJSON'
   pod 'Zhugeio'

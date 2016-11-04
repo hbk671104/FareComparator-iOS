@@ -11,13 +11,13 @@ PODS:
   - IBAnimatable (3.0.1)
   - iRate (1.11.6)
   - MJRefresh (3.1.12)
-  - ObjectMapper (2.2.0)
+  - ObjectMapper (2.2.1)
   - R.swift (3.1.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
   - RevealingSplashView (0.1.0)
-  - Siren (1.0.2)
-  - SwiftMessages (3.0.2)
+  - Siren (1.0.3)
+  - SwiftMessages (3.0.3)
   - SwiftyJSON (3.1.1)
   - Then (2.1.0)
   - UberRides (0.5.2):
@@ -29,7 +29,7 @@ PODS:
 DEPENDENCIES:
   - AMap3DMap
   - AMapSearch
-  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`, branch `swift3-readme`)
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - DZNEmptyDataSet
   - IBAnimatable
   - iRate
@@ -45,7 +45,6 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   ChameleonFramework:
-    :branch: swift3-readme
     :git: https://github.com/ViccAlexander/Chameleon.git
   UberRides:
     :branch: swift-3-dev
@@ -53,7 +52,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   ChameleonFramework:
-    :commit: 6ae796013eb01f0b5410e09e5a439aa1b328c270
+    :commit: dcf98f9bf3a632a7f40679b7da46f09681e48526
     :git: https://github.com/ViccAlexander/Chameleon.git
   UberRides:
     :commit: 7ba4b33fe464de3520bccbb8eb35cb4015363130
@@ -68,17 +67,17 @@ SPEC CHECKSUMS:
   IBAnimatable: 709f04a2b951c55db9ac4d8893684830bbdd0be2
   iRate: 61e558919c4a7fde63b3c22ebbd6c114a1eee658
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  ObjectMapper: 4060d739febae11ab0c6af8d786f98667c82e1bd
+  ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
   R.swift: 14400e5784224d1e4e59a8fc5549198c7e8fe360
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   RevealingSplashView: 501dd03d975ba2c4165dd463ea1c7c407fb9d13e
-  Siren: c21bad8c931d32f9cefd6511a42913b0195329fc
-  SwiftMessages: 3523c331c6b7b66e6f23a970ced259065ba31f9c
+  Siren: 0b3b813f4ba6a55b4058348ae4e719795c4f8cc7
+  SwiftMessages: 3c6fd0375009d69ff35a7656bae0e31b4d8a930d
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
   Then: 8496793c8fcac95482b943909b440724c7d8d82c
   UberRides: 96eb232374a6e8e616c20fdba83c2643a6ad08dc
   Zhugeio: 0db34ba66ee32594662df0abdc57cd863cf105b0
 
-PODFILE CHECKSUM: 4a6cc93b4eb1c07ed9210ef8b4fc57314782e561
+PODFILE CHECKSUM: 215aa9338464516f6b064e4594f09deaa234467c
 
 COCOAPODS: 1.0.1
